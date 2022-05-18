@@ -59,6 +59,8 @@
                         
                         <li class="nav-item "><a href="../page/monthproduct.html" class="nav-link">本月商品</a>
                         </li>
+                        <li class="nav-item "><a href="../page/signin.html" class="nav-link">signin</a>
+                        </li>
 
                         <hr class="hr_nav"><!-- ----------------------------------- -->
                         
@@ -84,8 +86,9 @@
         
 
         <!-- Page Content  -->
-        <div id="content" style="background-color: #D0CEC6;">
+        <div id="content">
             <div class="container"  style="margin-top:70px;">
+                <div style="margin-top:10%;"></div>
                 <script>document.write(cartpage_show_productlist())</script>
 
                 <!-- <div style="min-width:85%; max-width:90%;" class="mx-auto">
@@ -130,17 +133,17 @@
                 </div> -->
 
 
-                <div class="total_price" style="margin-left:10%;">
-                    <p style="display: inline-block; color:black">
-                        ❗️填寫表單後，請私訊我們IG小盒子，我們核對訂單後會提供匯款資料(面交一樣須先匯款!)需於匯款期限內完成匯款才算訂購成功<br><br>
-
-                        ⚠️馬卡龍為易碎甜點，若運送途中不當摔毀，或宅配時溫度保存不當導致馬卡龍有所損毀，皆為購買風險，訂購前請詳加考慮(可接受在下訂)<br><br>
-                        
-                        
-                        ✅下訂則代表願意承擔此風險，恕不退換貨，若有任何疑問或爭議請私訊我們，可以一同討論<br>
-                        ✅收到後請立即放置冰箱冷凍，馬卡龍冷凍保存期限為兩週，❌不可冷藏保存，<br>
-                        ✅食用方式：冷藏退冰30分鐘-1小時，或是常溫解凍5-10分鐘再食用</p>
+                <div class="mx-auto" style="width: 130px; margin-left:10%; margin-top:5%;">
+                    <p onclick="continue_shopping()" style="border:3px rgb(31, 40, 55) solid; border-radius:10px; width:130px; " class="text-center">
+                        continue shopping
+                    </p>
+                    <script>
+                        function continue_shopping(){
+                            window.location.href="../page/monthproduct.html";
+                        }
+                    </script>
                 </div>
+
                 <div class="mx-auto"style="width: 130px;">
                     <p onclick="checkoutpage()" style="border:3px rgb(31, 40, 55) solid; border-radius:10px; width:130px; " class="text-center">
                         前往結賬
@@ -148,9 +151,10 @@
                 </div>
                 
             </div>
-        </div>
 
-        <footer class="text-center" style="background-color: #D0CEC6;">
+            <div class='line'></div>
+
+        <footer class="text-center">
             <!-- Grid container -->
             <div class="container">
               <!-- Section: Social media -->
@@ -182,13 +186,14 @@
             <!-- Grid container -->
           
             <!-- Copyright -->
-            <div class="text-center text-dark p-3 ENGword" style="background-color: #D0CEC6;">
+            <div class="text-center text-dark p-3 ENGword">
                 copyright © 2022 : ASH
             </div>
             <!-- Copyright -->
         </footer>
 
 
+    </div>
     </body>
 
 </html>

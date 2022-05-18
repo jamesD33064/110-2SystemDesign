@@ -120,7 +120,7 @@ function cartpage_show_productlist(){
                 total = one_product_totalprice(productnum_list[i].name);
                 
                 cartlist+="<div style=\"width:85%;\" class=\"mx-auto\">";
-                cartlist+="<div class='row' style='background-color:#bebaa9';>";
+                cartlist+="<div class='row' style='background-color:#ffffff';>";
                 cartlist+="<div class='col-6 col-sm-6 text-center align-middle' style=\"margin-top: 6%;\">";
                 cartlist+="<img src='"+img_path+"' class='product_img' style='width: 90px;'>";
                 cartlist+="</div>";
@@ -134,13 +134,13 @@ function cartpage_show_productlist(){
                 cartlist+="<p style='font-size: 1rem; color:black; display:inline-block;' onclick=\"delete_product('"+productnum_list[i].name+"')\">x</p>";
                 
                 cartlist+="</div></div></div>";
-                cartlist+="<div class=\"row\" style='background-color:#bebaa9';>";
+                cartlist+="<div class=\"row\" style='background-color:#ffffff';>";
                 cartlist+="<div class=\"col-12 col-sm-12\">";
                 cartlist+="<div class=\"text-end\">";
                 cartlist+="<p style='display:block;'>NT&nbsp;$<script>document.write(product_price('"+productnum_list[i].name+"'))</script></p>";
 
                 cartlist+="</div></div></div>";
-                cartlist+="<div class=\"row\" style='background-color:#bebaa9';>";
+                cartlist+="<div class=\"row\" style='background-color:#ffffff';>";
                 cartlist+="<div class=\"col-6 col-sm-6\">";
                 cartlist+="<div class=\"text-center\">";
                 cartlist+="<p style=' font-size: 1rem; color:black; display:inline-block;' onclick=\"cartpage_sub('"+productnum_list[i].name+"')\">-&emsp;</p>";
