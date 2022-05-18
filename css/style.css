@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #D0CEC6;
+    background-color: #ffffff;
 }
 
 p {
@@ -21,7 +21,7 @@ a:focus {
 
 .navbar {
     padding: 15px 10px;
-    background: #D0CEC6;
+    background: #ffffff;
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
