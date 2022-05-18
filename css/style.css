@@ -1,0 +1,145 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #D0CEC6;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    /* color: #D0CEC6; */
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #D0CEC6;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+/* ---------------------------------------------------
+    CONTENTPICTURE
+----------------------------------------------------- */
+.hoverbig{
+    overflow: hidden;
+    }
+img{
+    transition: .5s;
+    }
+.hoverbig:hover img{
+    transform: scale(1.2);
+    }
+.cover-fit{
+    width: 100%;
+    height: 100%;
+    }
+.full-screen {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+.ENGword {
+    font-family: 'Noto Serif TC', serif;
+}
+.TCword {font-family: 'Noto Serif TC', serif;}
+
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+.cwTeXMing{
+  font-family: 'cwTeXFangSong', serif;
+}
+/* 內容 */
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+/* 解析度小於六百 */
+/* @media screen and (min-width: 700px) {
+    #navbar {
+        margin-top: -250px;
+    }
+    #navbar.active {
+        margin-top: 0;
+    }
+    #nvbar{
+        display: none;
+    }
+} */
+
+/* 解析度大於六百 */
+/* @media screen and (max-width: 700px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: block;
+    }
+} */
+
+
+/* ---------------------------------------------------
+    CART
+----------------------------------------------------- */
+#small_cart{
+    display: none;
+}
+#big_cart{
+    display: inline-block;
+}
+@media screen and (max-width: 991px) {
+    #small_cart{
+        display: inline-block;
+    }
+    #big_cart{
+        display:none;
+    }
+}

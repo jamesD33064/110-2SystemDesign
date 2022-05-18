@@ -1,0 +1,33 @@
+/* html {font-size:10px;}
+body {font-size: 1.4rem;} */
+.product_img{
+    min-width: 180px;
+}
+#smallscreen{
+    display:block;
+}
+#bigscreen{
+    display:none;
+}
+@media screen and (min-width: 575px) {
+    #smallscreen{
+        display:none;
+    }
+    #bigscreen{
+        display:block;
+    }
+    img{
+        max-width: 40px;
+    }
+}
+
+/* @media screen and (max-width: 845px) {
+    .introduce_content{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 1190px) {
+    .introduce_content{
+        font-size: 14px;
+    }
+} */
