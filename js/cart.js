@@ -101,8 +101,8 @@ function numlist(){
 
 
 function cartpage_show_productlist(){
-    var cartlist="";
-    var img_path="../image/story_1.jpg" ,productname="";
+    var cartlist=""; 
+    var productname="";
     if (localStorage.getItem('num_list')){
         // if(document.getElementById("cartnum_small").innerText==0 || document.getElementById("cartnum_big").innerText==0){
         //     return "<h1  class='fw-bolder TCword text-center' style='margin-top: 3vw;'>Nothing in the cart</h1>";
@@ -114,7 +114,11 @@ function cartpage_show_productlist(){
         productnum_list = JSON.parse(localStorage.getItem('num_list'));
 
         for(var i=0 ; i<productnum_list.length ; i++){
+
+        
             if(productnum_list[i].count){
+
+                var img_path = "../image/"+product_img_1(productnum_list[i].name);
 
                 productname = product_name(productnum_list[i].name);
                 total = one_product_totalprice(productnum_list[i].name);
