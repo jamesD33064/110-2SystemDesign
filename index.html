@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
     <head>
+
+
         <!-- 刪快取用要記得刪掉 -->
         <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
         <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
         <META HTTP-EQUIV="expires" CONTENT="0">
         <!-- ******************************************* -->
 
-        <title>ONLINE BOOKSTORE</title>
+        <title>Product</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,45 +20,22 @@
         <!-- 字型 中文 -->
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
         
-        <!-- Bootstrap CSS JS-->
+        <!-- Bootstrap CSS -->
+        <script src="./js/getDBdata.js"></script>
         <link href="./css/style.css" rel="stylesheet">
-        <script src="./js/cart.js"></script>
         <script src="./js/product.js"></script>
+        <script src="./js/cart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    </head>
-	<body>
-        <script>
-            //將資料庫取得資料寫入localstorage命名為productlist_from_db
-            var product_data_from_db=[];
+    
 
-            function get(url) {
-            
-                    return new Promise((resolve, reject)=> {
-                        var req = new XMLHttpRequest();
-                        req.open('GET', url);
-                        req.onload = function() {
-                            if (req.status == 200 && req.readyState==4) {
-                                resolve(JSON.parse(req.response));
-                            }
-                        };
-                        req.send();
-                    });
-            }
-            get("./db/sendProductToJS.php")
-            .then((res) => {
-                product_data_from_db=[];
-                res.forEach(element => {
-                    product_data_from_db.push(element);
-                });
-                localStorage.setItem("productlist_from_db",JSON.stringify(product_data_from_db));
-                // window.setTimeout(( () =>  ), 5000);
-            })
-        </script>
+    </head>
+    
+    <body>
         <!-- nvbar  -->
         <nav class="fixed-top navbar navbar-expand-lg navbar-light" id="nvbar">
             <div class="container-fluid">
-                <a class="navbar-brand" href=""><img src="./image/logo.jpg" class="img-fluid" style="width: 60px; height: 60px;"></a>
+                <a class="navbar-brand" href="./index.html"><img src="./image/logo.jpg" class="img-fluid" style="width: 60px; height: 60px;"></a>
 
                 <div id="navbar_right">
 
@@ -74,7 +52,7 @@
                 
                 <div class="collapse navbar-collapse top_nav" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto ">
-                        <li class="nav-item"><a href="" class="nav-link">首頁</a>   
+                        <li class="nav-item"><a href="./index.html" class="nav-link">首頁</a>   
                         </li>
                         
                         <hr class="hr_nav"><!-- ----------------------------------- -->
@@ -105,48 +83,132 @@
                 </span>
             </div>
         </nav>
+        
+        
 
-        <div id="carousel" class="carousel slide w-100" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner w-100">
-                <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="image/IMG_0400.JPG" class="d-block w-100" >
+        <!-- Page Content  -->
+        <div id="content" style="background-color: #ffffff;">
+
+            <div class="container"  style="padding-top:80px;">
+
+                <h2 class="text-center TCword">  </h2>
+
+                <div class="row" style="margin-top: 5vw;"><!-- margin-top分隔 -->
+
+                    <div class="col-4 col-sm-4 mx-auto">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 mx-auto">
+                                <div id="Indicators" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#Indicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#Indicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#Indicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active"  data-bs-interval="6000">
+                                            <img src="https://s.eslite.dev/webp/xy3ecqw1o3p39ogn6x9avph1zje1" class="d-block w-100">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="6000">
+                                            <img src="	https://s.eslite.dev/webp/343po35o4kdfbh6l4werne8a8hf2" class="d-block w-100">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="6000">
+                                            <img src="https://s.eslite.dev/webp/vhu2wlv6227xen2nr74xox7s73sz" class="d-block w-100">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#Indicators" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#Indicators" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-12 mx-auto" style="margin-top: 2.5%;">
+                                <div id="Indicators" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#Indicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#Indicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#Indicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active"  data-bs-interval="6000">
+                                            <img src="https://s.eslite.dev/webp/xy3ecqw1o3p39ogn6x9avph1zje1" class="d-block w-100">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="6000">
+                                            <img src="	https://s.eslite.dev/webp/343po35o4kdfbh6l4werne8a8hf2" class="d-block w-100">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="6000">
+                                            <img src="https://s.eslite.dev/webp/vhu2wlv6227xen2nr74xox7s73sz" class="d-block w-100">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#Indicators" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#Indicators" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8 col-sm-8 mx-auto">
+                        <div id="Indicators" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#Indicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#Indicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#Indicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"  data-bs-interval="6000">
+                                    <img src="https://s.eslite.dev/webp/xy3ecqw1o3p39ogn6x9avph1zje1" class="d-block w-100">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="6000">
+                                    <img src="	https://s.eslite.dev/webp/343po35o4kdfbh6l4werne8a8hf2" class="d-block w-100">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="6000">
+                                    <img src="https://s.eslite.dev/webp/vhu2wlv6227xen2nr74xox7s73sz" class="d-block w-100">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#Indicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#Indicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- <div class="col-12 col-sm-6">
+                        <div class="" style="background-color:#ffffff ;">
+
+                            <h3 class="text-center TCword" style="color: black;"> <script>document.write(get_sessionstorage_productname());</script> </h3>
+
+                            <p class="text-center lh-1 fs-6 TCword" style="color: black;">NT <script>document.write(get_sessionstorage_productprice());</script>$</p>
+
+                            <div class="text-center">
+                                <button onclick="productpage_sub()">-</button>
+                                <p style="display: inline-block; color:black" id="product_num">1</p>
+                                <button onclick="productpage_add()">+</button>
+                                <button onclick="productpage_sure()">Sure</button>
+                            </div>
+
+                        </div>
+                    </div> -->
                 </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="image/IMG_0400.JPG" class="d-block w-100" >
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="image/IMG_0400.JPG" class="d-block w-100" >
-                </div>
+
+
+                <div class="line"></div>
+               
             </div>
         </div>
-
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
-        
-		<script>
-			$(function(){
-				var $item = $('.carousel .carousel-item');
-				var $wHeight = $(window).height();
-				$item.height($wHeight);
-				$item.addClass('full-screen');
-
-				$('.carousel img').each(function() {
-                    var $src = $(this).attr('src');
-                    var $color = $(this).attr('data-color');
-                    $(this).parent().css({
-                        'background-image' : 'url(' + $src + ')',
-                        'background-color' : $color
-                    });
-                    $(this).remove();
-				});
-
-			});
-		</script> -->
-
 
         <footer class="text-center" style="background-color: #ffffff;">
             <!-- Grid container -->
@@ -185,7 +247,8 @@
             </div>
             <!-- Copyright -->
         </footer>
-        
-    
-	</body>
-	</html>
+
+
+    </body>
+
+</html>
