@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- 主機： localhost
--- 產生時間： 2022 年 05 月 18 日 16:28
--- 伺服器版本： 10.4.21-MariaDB
--- PHP 版本： 7.4.29
+-- 主機： 127.0.0.1
+-- 產生時間： 2022-05-19 07:11:18
+-- 伺服器版本： 10.4.22-MariaDB
+-- PHP 版本： 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫: `1102systemdesiign`
+-- 資料庫: `1102systemdesign`
 --
 
 -- --------------------------------------------------------
@@ -41,14 +41,14 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`) VALUES
-('p1', '馬卡龍\r\n', 1099, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p2', '布朗尼', 2, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p3', '可頌\r\n', 555, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p4', '戚風', 4, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p5', '法棍', 5, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p6', '可麗露', 6, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p7', '塔', 7, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p8', '章魚小丸子', 8, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG');
+('p1', '你好這裡是記憶花店', 1099, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
+('p2', '你好這裡是記憶花店', 2, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
+('p3', '你好這裡是記憶花店', 555, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
+('p4', '你好這裡是記憶花店', 4, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
+('p5', '日本色彩寫真物語', 5, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
+('p6', '日本色彩寫真物語', 6, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
+('p7', '日本色彩寫真物語', 7, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
+('p8', '日本色彩寫真物語', 8, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG');
 
 -- --------------------------------------------------------
 
