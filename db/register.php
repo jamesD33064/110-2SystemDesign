@@ -1,30 +1,42 @@
 <?php
-        include ("coon.php");
+    include ("coon.php");
 
-        // $cname = $_POST["cname"];
-        // $customer_address = $_POST["address"];
-        // $product_num_json = $_POST["product_num_json"];
-        // $comments = $_POST["comments"];
-        // $sendway = $_POST["sendway"];
-        $id=8;
-        $product_name=array("馬卡龍","布朗尼","可頌","戚風","法棍","可麗露","塔","章魚小丸子") ;
-        $product_price=8;
-        $img_1='IMG_0400.JPG';
-        $img_2='IMG_0400.JPG';
-        $img_3='IMG_0400.JPG';
+    $email = $_POST["email"];
+    $username = $_POST["username"];
+    $password = $_POST["password"]; 
 
+    // echo $email;
+    $sql = "SELECT email FROM customer;";
+    $result = mysqli_query($link,$sql);
 
-        for($i=1 ; $i<9 ;$i++){
-            $id_1="p".strval($i);
-            $sql = "INSERT INTO product (id , product_name , product_price , img_1 , img_2 , img_3)
-            VALUES('".$id_1."','".$product_name[$i-1]."','".$i."','".$img_1."','".$img_2."','".$img_3."')";
+    if ($result) {
+        if (mysqli_num_rows($result)>0) {
 
-            if(mysqli_query($link, $sql)){
-                echo "新增成功!<br>";
+            while ($row = mysqli_fetch_assoc($result)) {
+                
+                if($row["email"] == $email){
+                    echo "已有同帳號";
+                    session_start();
+                    $_SESSION["loggedin"] = false;
+                    header("location:../page/profile.html");
+                }
+
             }
-        }
 
-        mysqli_close($link);
+            mysqli_free_result($result);
+
+            $sql = "INSERT INTO `customer` (`username`, `email`, `user_password`) VALUES ('".$username."' , '".$email."' , '".$password."');";
+            $result = mysqli_query($link,$sql);
+            // echo "success";
+            header("location:../page/signin.html");
+        }
+        // mysqli_free_result($result);
+    }
+    else {
+        echo "{$sql} 語法執行失敗，錯誤訊息: " . mysqli_error($link);
+    }
+
+    mysqli_close($link);
 
 
 ?>
