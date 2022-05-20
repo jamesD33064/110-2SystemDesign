@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-05-19 07:11:18
+-- 產生時間： 2022-05-20 18:37:18
 -- 伺服器版本： 10.4.22-MariaDB
 -- PHP 版本： 8.1.2
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- 資料庫: `1102systemdesign`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `customer`
+--
+
+CREATE TABLE `customer` (
+  `username` varchar(10) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `user_password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `customer`
+--
+
+INSERT INTO `customer` (`username`, `email`, `user_password`) VALUES
+('aaa', 'aaa@aaa.com', 'aaa'),
+('bbb', 'bbb@bbb.com', 'bbb'),
+('ccc', 'ccc@ccc.com', 'ccc'),
+('ddd', 'ddd@ddd.com', 'ddd'),
+('eee', 'eee@eee.com', 'eee');
 
 -- --------------------------------------------------------
 
@@ -81,11 +104,18 @@ INSERT INTO `test` (`id`, `IGname`, `email`, `ordername`, `orderphone`, `recever
 ('20220503', 'd', 'james0120160379@gmail.com', 'dddddddddd', 'dddddddddd', 'dddddddddd', '[{\"name\":\"p1\",\"count\":0},{\"name\":\"p2\",\"count\":1},{\"name\":\"p3\",\"count\":0},{\"name\":\"p4\",\"count\":0},{\"name\":\"p5\",\"count\":1},{\"name\":\"p6\",\"count\":0},{\"name\":\"p7\",\"count\":0},{\"name\":\"p8\",\"count\":1}]', 'sendway_3', '', '2022-05-03 13:56:32'),
 ('20220507', 'r', 'james0120160379@gmail.com', 'r', 'rrrrrrrrrr', 'rrrrrrrrrr', '[{\"name\":\"p1\",\"count\":11},{\"name\":\"p2\",\"count\":6},{\"name\":\"p3\",\"count\":0},{\"name\":\"p4\",\"count\":0},{\"name\":\"p5\",\"count\":0},{\"name\":\"p6\",\"count\":0},{\"name\":\"p7\",\"count\":0},{\"name\":\"p8\",\"count\":0}]', 'sendway_2', 'rrrrrrrrrr', '2022-05-07 12:34:27'),
 ('20220507', 'v', 'james0120160379@gmail.com', 'v', 'vvvvvvvvvv', 'vvvvvvvvvv', '[{\"name\":\"p1\",\"count\":0},{\"name\":\"p2\",\"count\":1},{\"name\":\"p3\",\"count\":0},{\"name\":\"p4\",\"count\":0},{\"name\":\"p5\",\"count\":0},{\"name\":\"p6\",\"count\":0},{\"name\":\"p7\",\"count\":0},{\"name\":\"p8\",\"count\":0}]', 'sendway_1', 'vvvvvvvvvv', '2022-05-07 12:36:22'),
-('20220507', 'f', 'james0120160379@gmail.com', 'v', 'vvvvvvvvvv', 'vvvvvvvvvv', '[{\"name\":\"p1\",\"count\":0},{\"name\":\"p2\",\"count\":1},{\"name\":\"p3\",\"count\":0},{\"name\":\"p4\",\"count\":0},{\"name\":\"p5\",\"count\":0},{\"name\":\"p6\",\"count\":0},{\"name\":\"p7\",\"count\":0},{\"name\":\"p8\",\"count\":0}]', 'sendway_3', '', '2022-05-07 12:37:57');
+('20220507', 'f', 'james0120160379@gmail.com', 'v', 'vvvvvvvvvv', 'vvvvvvvvvv', '[{\"name\":\"p1\",\"count\":0},{\"name\":\"p2\",\"count\":1},{\"name\":\"p3\",\"count\":0},{\"name\":\"p4\",\"count\":0},{\"name\":\"p5\",\"count\":0},{\"name\":\"p6\",\"count\":0},{\"name\":\"p7\",\"count\":0},{\"name\":\"p8\",\"count\":0}]', 'sendway_3', '', '2022-05-07 12:37:57'),
+('20220519', 'v', 'james0120160379@gmail.com', 's', 'ssssssssss', 'ssssssssss', '[{\"name\":\"p1\",\"count\":0},{\"name\":\"p2\",\"count\":0},{\"name\":\"p3\",\"count\":2},{\"name\":\"p4\",\"count\":4},{\"name\":\"p5\",\"count\":0},{\"name\":\"p6\",\"count\":0},{\"name\":\"p7\",\"count\":0},{\"name\":\"p8\",\"count\":0}]', 'sendway_3', '', '2022-05-19 16:39:57');
 
 --
 -- 已傾印資料表的索引
 --
+
+--
+-- 資料表索引 `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- 資料表索引 `product`

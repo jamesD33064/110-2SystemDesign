@@ -16,11 +16,12 @@ function get(url) {
 get("../db/userdata.php")
 .then((res) => {
     data = JSON.parse(res);
+    // alert(res);
     if(data[0]){// login
         navbar_change(data[0]);
     }
     else{ //unlogin
-
+        navbar_change(data[0]);
     }
 })
 

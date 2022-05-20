@@ -16,7 +16,6 @@ function get(url) {
 get("../db/userdata.php")
 .then((res) => {
     data = JSON.parse(res);
-    // alert(createqrcode(data[1]));
     if(data[0]){
         // alert(data[0]);
         profile_username(data[1]);
