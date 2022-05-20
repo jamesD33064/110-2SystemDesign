@@ -33,7 +33,7 @@
                 $_SESSION["loggedin"] = false;
             }
 
-            header("location:../index.html");
+            header('location:../view/index.html'); 
         }
         mysqli_free_result($result);
     }

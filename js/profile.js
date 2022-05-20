@@ -30,3 +30,6 @@ get("../db/userdata.php")
 function profile_username(name){
     document.getElementById("username").innerText=name;
 }
+function logout(){
+    window.location="../db/logout.php";
+}
