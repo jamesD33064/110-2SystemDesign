@@ -37,7 +37,7 @@
         <!-- nvbar  -->
         <nav class="fixed-top navbar navbar-expand-lg navbar-light" id="nvbar">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../index.html"><img src="../image/logo.jpg" class="img-fluid" style="width: 60px; height: 60px;"></a>
+                <a class="navbar-brand" href="../view/index.html"><img src="../image/logo.jpg" class="img-fluid" style="width: 60px; height: 60px;"></a>
 
                 <div id="navbar_right">
 
@@ -52,53 +52,35 @@
                     </button>
                 </div>
                 
-                <nav class="fixed-top navbar navbar-expand-lg navbar-light" id="nvbar">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="../index.html"><img src="../image/logo.jpg" class="img-fluid" style="width: 60px; height: 60px;"></a>
-        
-                        <div id="navbar_right">
-        
-                            <a href="../page/cart.html"><span id="small_cart">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16"><path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                </svg>
-                                <span class="badge" id="cartnum_small"><script>cart_num()</script></span>
-                            </span></a>
-        
-                            <button class="navbar-toggler" style="margin-right:5px !important;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                        </div>
+                <div class="collapse navbar-collapse top_nav" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto ">
+                        <li class="nav-item"><a href="../view/index.html" class="nav-link">首頁</a>   
+                        </li>
                         
-                        <div class="collapse navbar-collapse top_nav" id="navbarSupportedContent">
-                            <ul class="navbar-nav mx-auto ">
-                                <li class="nav-item"><a href="../index.html" class="nav-link">首頁</a>   
-                                </li>
-                                
-                                <hr class="hr_nav"><!-- ----------------------------------- -->
-                                
-                                <li class="nav-item "><a href="../page/monthproduct.html" class="nav-link">本月商品</a>
-                                </li>
-                                <li class="nav-item " id="change"><a href="../page/change.html" class="nav-link">二手書交換</a>
-                                </li>
-                                <li class="nav-item " id="profile"><a href="../page/profile.html" class="nav-link">個人頁面</a>
-                                </li>
-                                <li class="nav-item " id="signin"><a href="../page/signin.html" class="nav-link">登入/註冊</a>
-                                </li>
-        
-                                <hr class="hr_nav"><!-- ----------------------------------- -->
-                                
-                                <li class="nav-item "><a href="https://instagram.com/the.second_room?utm_medium=copy_link" class="nav-link">Instagram</a>
-                                </li>
-                            </ul>
-                        </div>
-        
-                        <span id="big_cart">
-                            <a href="../page/cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16"><path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                            </svg></a>
-                            <span class="badge" id="cartnum_big"><script>cart_num()</script></span>
-                        </span>
-                    </div>
-                </nav>
+                        <hr class="hr_nav"><!-- ----------------------------------- -->
+                        
+                        <li class="nav-item "><a href="../page/monthproduct.html" class="nav-link">本月商品</a>
+                        </li>
+                        <li class="nav-item " id="change"><a href="../page/change.html" class="nav-link">二手書交換</a>
+                        </li>
+                        <li class="nav-item " id="profile"><a href="../page/profile.html" class="nav-link">個人頁面</a>
+                        </li>
+                        <li class="nav-item " id="signin"><a href="../page/signin.html" class="nav-link">登入/註冊</a>
+                        </li>
+
+                        <hr class="hr_nav"><!-- ----------------------------------- -->
+                        
+                        <li class="nav-item "><a href="https://instagram.com/the.second_room?utm_medium=copy_link" class="nav-link">Instagram</a>
+                        </li>
+                    </ul>
+                    <!-- <ul class="navbar navbar-nav navbar-right" style="display:flex;">
+                        <li>
+                        <button class="btn top_login">
+                                    <a href="/page/signin.html" style="text-decoration:none;">會員登入/註冊</a>
+                                </button>
+                        </li>
+                    </ul> -->
+                </div>
 
                 <span id="big_cart">
                     <a href="../page/cart.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16"><path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
