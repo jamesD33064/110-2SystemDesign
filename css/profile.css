@@ -7,24 +7,13 @@
     font-family: 'Noto Sans', sans-serif
 }
 
-html,
-body {
-    height: 100%
-}
-
-body {
-    display: grid;
-    place-items: center;
-    background: #2568b4
-}
-
 .card {
 	color:#fff;
     width: 350px;
     border-radius: 10px;
-    background: linear-gradient(145deg, #9a40a9, #b74cc9);
-    box-shadow:  20px 20px 60px #913ca0, 
-                -20px -20px 60px #c552d8;
+    background: linear-gradient(145deg, #407aa9, #4c78c9);
+    box-shadow:  20px 20px 60px #3c73a0, 
+                -20px -20px 60px #52a7d8;
     border: none
 }
 
@@ -54,9 +43,9 @@ body {
 
 .neo-button:active {
    border-radius: 50%;
-background: #AB47BC;
-box-shadow:  28px 28px 57px #933da2, 
-             -28px -28px 57px #c351d6;
+    background: #AB47BC;
+    box-shadow:  28px 28px 57px #933da2, 
+                -28px -28px 57px #c351d6;
 }
 
 .fa-facebook {
