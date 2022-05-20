@@ -49,7 +49,7 @@
   top:100px;
   left: 0px;
   width: 320px;
-  height: 280px;
+  height: 320px;
   background-color: #eee;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -86,6 +86,7 @@
   .cont_img_back_grey {
     position: absolute;
     width: 950px;
+    height: 480px;
     top:-80px;
     left: -116px;
   }
@@ -121,29 +122,29 @@
   }
   
   .cont_forms_active_login > .cont_img_back_ {
-  top:0px;  
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+    top:0px;  
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
   }
   
   .cont_forms_active_sign_up > .cont_img_back_ {
-  top:0px;  
-  left: -435px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+    top:0px;  
+    left: -435px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
   }
    
   
   .cont_info_log_sign_up {
     position: absolute;
     width: 640px;
-    height: 280px;
+    height: 380px;
     top: 100px;
     z-index: 1;
   } 
@@ -156,15 +157,15 @@
   
   .col_md_login > h2 {
     font-weight: 400;
-  margin-top: 70px;
+    margin-top: 70px;
       color: #757575;
   }
   
   .col_md_login > p {
-   font-weight: 400;
-  margin-top: 15px;
-  width: 80%;
-      color: #37474F;
+    font-weight: 400;
+    margin-top: 15px;
+    width: 80%;
+    color: #37474F;
   }
   
   .btn_login { 
@@ -192,7 +193,7 @@
   
   .cont_ba_opcitiy > p {
    font-weight: 400;
-  margin-top: 15px;
+    margin-top: 15px;
    color: #fff;
   }
   /* ----------------------------------
@@ -203,21 +204,22 @@
     position: relative;
     background-color: rgba(120, 144, 156, 0.55);
     width: 80%;
+    height: 100%;
     border-radius:3px ;
-  margin-top: 60px;
-  padding: 15px 0px;
+    margin-top: 60px;
+    padding: 15px 0px;
   }
   
   .btn_sign_up { 
-  background-color: #ef5350;
+    background-color: #ef5350;
     border: none;
     padding: 10px;
-  width: 200px;
-  border-radius:3px;
-  box-shadow: 1px 5px 20px -5px rgba(0,0,0,0.4);
+    width: 200px;
+    border-radius:3px;
+    box-shadow: 1px 5px 20px -5px rgba(0,0,0,0.4);
     color: #fff;
-  margin-top: 10px;
-  cursor: pointer;
+    margin-top: 10px;
+    cursor: pointer;
   }
   .cont_forms_active_sign_up {
   z-index: 2;  
@@ -276,14 +278,14 @@
   }
   .cont_form_login {
     position: absolute;
-    opacity: 0;
-  display: none;
+    opacity: 0; 
+    display: none;
     width: 320px;
     -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
   }
   
   .cont_forms_active_login {
@@ -293,53 +295,53 @@
   .cont_form_sign_up {
     position: absolute;
     width: 320px;
-  float: left;
+    float: left;
     opacity: 0;
-  display: none;
+    display: none;
     -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
   }
   
     
-  .cont_form_sign_up > input {
-  text-align: left;
+  .signup_input > input {
+    text-align: left;
     padding: 15px 5px;
-  margin-left: 10px;
-  margin-top: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
     width: 260px;
-  border: none;
-      color: #757575;
+    border: none;
+    color: #757575;
   }
   
   .cont_form_sign_up > h2 {
-  margin-top: 50px; 
-  font-weight: 400;
+    margin-top: 50px; 
+    font-weight: 400;
     color: #757575;
   }
   
   
-  .cont_form_login > input {
+  .login_form > input {
     padding: 15px 5px;
-  margin-left: 10px;
-  margin-top: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
     width: 260px;
-  border: none;
-  text-align: left;
+    border: none;
+    text-align: left;
     color: #757575;
   }
   
   .cont_form_login > h2 {
-  margin-top: 110px; 
-  font-weight: 400;
+    margin-top: 110px; 
+    font-weight: 400;
     color: #757575;
   }
   .cont_form_login > a,.cont_form_sign_up > a  {
     color: #757575;
-      position: relative;
-      float: left;
-      margin: 10px;
-  margin-left: 30px;
+    position: relative;
+    float: left;
+    margin: 10px;
+    margin-left: 30px;
   }

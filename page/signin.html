@@ -127,22 +127,29 @@
                 <div class="cont_img_back_">
                    <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
                 </div>
+
                 <div class="cont_form_login">
                     <a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
                     <h2>LOGIN</h2>
-                    <input type="text" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+
+                    <form action="../db/signin.php" method="post" class="login_form">
+                        <input type="text" placeholder="Email" name="email"/>
+                        <input type="password" placeholder="Password" name="password"/>
+                        <button class="btn_login" type="submit">LOGIN</button>
+                    </form>
+
                 </div>
               
                <div class="cont_form_sign_up">
                     <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
                     <h2>SIGN UP</h2>
-                    <input type="text" placeholder="Email" />
-                    <input type="text" placeholder="User" />
-                    <input type="password" placeholder="Password" />
-                    <input type="password" placeholder="Confirm Password" />
-                    <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+                    <form action="../db/register.php" method="post" class="signup_input">
+                        <input type="text" placeholder="Email" />
+                        <input type="text" placeholder="User" />
+                        <input type="password" placeholder="Password" />
+                        <input type="password" placeholder="Confirm Password" />
+                        <button class="btn_sign_up" type="submit">SIGN UP</button>
+                    </form>
                 </div>
             
             </div>
