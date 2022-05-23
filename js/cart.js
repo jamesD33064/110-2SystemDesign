@@ -3,17 +3,7 @@ var cart_number = 0;
 
 var key='total_num'
 
-var productnum_list=[
-    {name:'p1',count:0},
-    {name:'p2',count:0},
-    {name:'p3',count:0},
-    {name:'p4',count:0},
-    {name:'p5',count:0},
-    {name:'p6',count:0},
-    {name:'p7',count:0},
-    {name:'p8',count:0}
-];
-
+var productnum_list=[];
 
 function productpage_add(){
     productnum++;
@@ -26,7 +16,7 @@ function productpage_sub(){
     }
 }
 
-function productpage_sure(){
+function productpage_sure(){//在產品頁面按下確認更新購物車數量
     cart_number+=productnum;
     localStorage.setItem(key, String(cart_number));
     numlist();
@@ -34,10 +24,10 @@ function productpage_sure(){
     productnum=1;
     document.getElementById("product_num").innerText=productnum;
 
-    alert("已加入購物車");//待改
+    alert("已加入購物車");
 }
 
-function cart_num(){
+function cart_num(){//整理navbar購物車部分應顯示的數量
     
     cart_number = Number(localStorage.getItem(key));
 
@@ -61,36 +51,19 @@ function cart_num(){
 
 }
 
-function numlist(){
+function numlist(){//在localstorage 建立購物車列表
     if (localStorage.getItem('num_list')!=null){
         productnum_list = JSON.parse(localStorage.getItem('num_list'));
     }
-
-    switch(sessionStorage.getItem('productname')){
-        case 'p1' :
-            productnum_list[0].count+=productnum;
-            break;
-        case 'p2' :
-            productnum_list[1].count+=productnum;
-            break;
-        case 'p3' :
-            productnum_list[2].count+=productnum;
-            break;
-        case 'p4' :
-            productnum_list[3].count+=productnum;
-            break;
-        case 'p5' :
-            productnum_list[4].count+=productnum;
-            break;
-        case 'p6' :
-            productnum_list[5].count+=productnum;
-            break;
-        case 'p7' :
-            productnum_list[6].count+=productnum;
-            break;
-        case 'p8' :
-            productnum_list[7].count+=productnum;
-            break;       
+    a=0;
+    productnum_list.forEach(element => {
+        if(element.name==sessionStorage.getItem('productname')){
+            element.count+=productnum;
+            a=1;
+        }
+    });
+    if(a==0){
+        productnum_list.push({name:sessionStorage.getItem('productname'),count:productnum});
     }
 
     var data = JSON.stringify(productnum_list);
@@ -279,38 +252,3 @@ function product_totalprice(){
         return 0;
     }
 }
-
-
-
-
-// <div class='row' style='background-color:#D0CEC6';>
-// <div class='col-6 col-sm-6 text-center align-middle' style='max-width: 575px;'>
-//     <img src='../image/story_1.jpg' class='product_img' style='width: 130px;'>
-// </div>
-// <div id='bigscreen' class='col-6 col-sm-6'>
-//     <div style='margin-top: 10%;'>
-//         <h4 class='fw-bolder TCword' >demo<script>document.write(product_name('p4'))</script></h4>
-//     </div>
-// </div>
-// </div>
-// <div class="row">
-// <div style='margin-top: 3vw;' class="col-6 col-sm-6">
-//     <div class="text-center">
-//         <p style='font-size: 1rem; color:black; display:inline-block;' onclick="cartpage_sub('p4')">-&emsp;</p>
-//         <p style='font-size: 1rem; color:black; display:inline-block;'>數量：3</p>
-//         <p style='font-size: 1rem; color:black; display:inline-block;' onclick="cartpage_add('p4')">&emsp;+</p>
-//     </div>
-// </div>
-// <div style='margin-top: 3vw;' class="col-3 col-sm-3">
-//     <div class="text-start">
-//         <h6 class='fw-bolder TCword' style='display:inline-block;'>NT&emsp;$<script>document.write(one_product_totalprice('p4'))</script></h6>
-//     </div>
-// </div>
-// <div style='margin-top: 3vw;' class="col-3 col-sm-3">
-//     <div class="text-end">
-//         <h6 style='font-size: 1rem; color:black; display:inline-block;' class="fw-bolder TCword" onclick="delete_product('p4')">delete</h6>
-//     </div>
-// </div>
-// </div>
-
-// <div class='line'></div>
