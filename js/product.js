@@ -2,6 +2,10 @@ function productname_locolstorage(name){
     sessionStorage.setItem('productname', name);
     window.location.href="../product/product.html";
 }
+function changeproductname_locolstorage(name){
+    sessionStorage.setItem('productname', name);
+    window.location.href="../product/change.html";
+}
 
 
 
