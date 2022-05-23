@@ -29,13 +29,11 @@ function show_changeproduct_list(list){
         img_path = "../image/"+list[i].img_1;
 
         cartlist+="<div class=\"col-6 col-md-3\" style=\"margin-top: 5vw;\">";
-        cartlist+="<div class=\"card\" style=\"border-color:#ffffff;\" onclick=\"changeproductname_locolstorage('"+list[i].id+"');\">";
-        cartlist+="<div class=\"hoverbig\">";
-        cartlist+="<img src=\""+img_path+"\" width=\"100%\" height=\"100%\">";
-        cartlist+="</div>";
+        cartlist+="<div class=\"card hoverbig\" style=\"border-color:#ffffff;\" onclick=\"changeproductname_locolstorage('"+list[i].id+"');\">";
+        cartlist+="<img src=\""+img_path+"\" height=\"300vw\" class=\"mx-auto\">";
         cartlist+="<div class=\"card-body\" style=\"background-color: #ffffff;\">";
         cartlist+="<p class=\"text-center lh-1\" style=\"color: black;\">"+list[i].product_name+"</p>";
-        cartlist+="<p class=\"text-center lh-1\" style=\"color: black;\">NT "+list[i].product_price+"$</p>";
+        cartlist+="<p class=\"text-center lh-1\" style=\"color: black;\">來自 \""+list[i].from_customer_name+"\"用戶</p>";
         cartlist+="</div></div></div>";
 
     }
