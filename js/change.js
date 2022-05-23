@@ -17,15 +17,11 @@ function get(url) {
 
 get("../db/sendChangeToJS.php")
 .then((res) => {
-    // product_data_from_db=[];
-    // res.forEach(element => {
-    //     product_data_from_db.push(element);
-    // });
-    show_monthproduct_list(res);
+    show_changeproduct_list(res);
 })
 
 
-function show_monthproduct_list(list){
+function show_changeproduct_list(list){
     var cartlist=""; 
 
     for(var i=0 ; i<list.length ; i++){
@@ -33,7 +29,7 @@ function show_monthproduct_list(list){
         img_path = "../image/"+list[i].img_1;
 
         cartlist+="<div class=\"col-6 col-md-3\" style=\"margin-top: 5vw;\">";
-        cartlist+="<div class=\"card\" style=\"border-color:#ffffff;\" onclick=\"productname_locolstorage('"+list[i].id+"');\">";
+        cartlist+="<div class=\"card\" style=\"border-color:#ffffff;\" onclick=\"changeproductname_locolstorage('"+list[i].id+"');\">";
         cartlist+="<div class=\"hoverbig\">";
         cartlist+="<img src=\""+img_path+"\" width=\"100%\" height=\"100%\">";
         cartlist+="</div>";
