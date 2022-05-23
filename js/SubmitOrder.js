@@ -25,7 +25,7 @@ function post_productlist(){
     
         },function(data){
             // alert("下單成功，聯絡客服確認訂單");
-            window.location.href="https://instagram.com/the.second_room?utm_medium=copy_link";
+            window.location.href="../view/index.html";
             // $(".result").html(data);
         });
         localStorage.clear();

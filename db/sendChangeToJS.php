@@ -4,17 +4,21 @@
 
     class Product{
         public $id='';
-        public $BOOKorCD_name='';
-        public $price=0;
         public $from_customer_name='';
+        public $product_name='';
+        public $product_price=0;
         public $img_1='';
-        
-        function set($id,$BOOKorCD_name,$price,$from_customer_name,$img_1){
+        public $img_2='';
+        public $img_3='';
+
+        function set($id,$from_customer_name,$product_name,$product_price,$img_1,$img_2,$img_3){
             $this->id = $id;
-            $this->BOOKorCD_name = $BOOKorCD_name;
-            $this->price = $price;
             $this->from_customer_name = $from_customer_name;
+            $this->product_name = $product_name;
+            $this->product_price = $product_price;
             $this->img_1 = $img_1;
+            $this->img_2 = $img_2;
+            $this->img_3 = $img_3;
         }
     }
 
@@ -27,7 +31,7 @@
         while($row = mysqli_fetch_assoc($result)){
             // echo $row['id'].'<br>';
             $entity = new Product();
-            $entity->set($row['id'],$row['BOOKorCD_name'],$row['price'],$row['from_customer_name'],$row['img_1']);
+            $entity->set($row['id'],$row['from_customer_name'],$row['product_name'],$row['product_price'],$row['img_1'],$row['img_2'],$row['img_3']);
             
             array_push($product_list,$entity);
             
