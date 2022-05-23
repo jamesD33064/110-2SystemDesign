@@ -17,26 +17,35 @@ function get(url) {
 
 get("../db/sendProductToJS.php")
 .then((res) => {
-    product_data_from_db=[];
-    res.forEach(element => {
-        product_data_from_db.push(element);
-    });
-    //將資料庫取得資料寫入localstorage命名為productlist_from_db
-    localStorage.setItem("productlist_from_db",JSON.stringify(product_data_from_db));
-    // window.setTimeout(( () =>  ), 5000);
+    // product_data_from_db=[];
+    // res.forEach(element => {
+    //     product_data_from_db.push(element);
+    // });
+    show_monthproduct_list(res);
 })
 
 
-{/* <div class="col-6 col-md-3">
-<div class="card" style="border-color:#ffffff;" onclick="productname_locolstorage('p1');">
-    <div class="hoverbig">
-        <img src="https://s.eslite.dev/webp/upload/product/m/2682158950000/20220416055754721577.webp" width="100%" height="100%">
-    </div>
-    <div class="card-body" style="background-color: #ffffff;">
+function show_monthproduct_list(list){
+    var cartlist=""; 
 
-        <p class="text-center lh-1 " style="color: black;"><script>document.write(product_name('p1'))</script></p>
-        <p class="text-center lh-1 fs-6" style="color: black;">NT <script>document.write(product_price('p1'))</script>$</p>
+    for(var i=0 ; i<list.length ; i++){
 
-    </div>
-</div>
-</div> */}
+        img_path = "../image/"+list[i].img_1;
+
+        cartlist+="<div class=\"col-6 col-md-3\" style=\"margin-top: 5vw;\">";
+        cartlist+="<div class=\"card\" style=\"border-color:#ffffff;\" onclick=\"productname_locolstorage('"+list[i].id+"');\">";
+        cartlist+="<div class=\"hoverbig\">";
+        cartlist+="<img src=\""+img_path+"\" width=\"100%\" height=\"100%\">";
+        cartlist+="</div>";
+        cartlist+="<div class=\"card-body\" style=\"background-color: #ffffff;\">";
+        cartlist+="<p class=\"text-center lh-1\" style=\"color: black;\">"+list[i].product_name+"</p>";
+        cartlist+="<p class=\"text-center lh-1\" style=\"color: black;\">NT "+list[i].product_price+"$</p>";
+        cartlist+="</div></div></div>";
+
+    }
+    document.getElementById("monthproduct_list").innerHTML=cartlist;
+
+
+}
+
+ 
