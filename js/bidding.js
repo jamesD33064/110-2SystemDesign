@@ -15,17 +15,13 @@ function get(url) {
 }
 
 
-get("../db/sendProductToJS.php")
+get("../db/sendBiddingToJS.php")
 .then((res) => {
-    // product_data_from_db=[];
-    // res.forEach(element => {
-    //     product_data_from_db.push(element);
-    // });
-    show_monthproduct_list(res);
+    show_biddingproduct_list(res);
 })
 
 
-function show_monthproduct_list(list){
+function show_biddingproduct_list(list){
     var cartlist=""; 
 
     for(var i=0 ; i<list.length ; i++){
@@ -33,15 +29,15 @@ function show_monthproduct_list(list){
         img_path = "../image/"+list[i].img_1;
 
         cartlist+="<div class=\"col-xs-12 col-sm-6 col-lg-4 col-xl-3\" style=\"margin-top: 5vw;\">";
-        cartlist+="<div class=\"card hoverbig\" style=\"border-color:#ffffff;\" onclick=\"productname_locolstorage('"+list[i].id+"');\">";
+        cartlist+="<div class=\"card hoverbig\" style=\"border-color:#ffffff;\" onclick=\"biddingproductname_locolstorage('"+list[i].id+"');\">";
         cartlist+="<img src=\""+img_path+"\" height=\"300vw\" class=\"mx-auto\">";
         cartlist+="<div class=\"card-body\" style=\"background-color: #ffffff;\">";
         cartlist+="<p class=\"text-center lh-1\" style=\"color: black;\">"+list[i].product_name+"</p>";
-        cartlist+="<p class=\"text-center lh-1\" style=\"color: black;\">NT "+list[i].product_price+"$</p>";
+        cartlist+="<p class=\"text-center lh-1\" style=\"color: black;\">目前出價：NT "+list[i].product_price+"$</p>";
         cartlist+="</div></div></div>";
 
     }
-    document.getElementById("monthproduct_list").innerHTML=cartlist;
+    document.getElementById("biddingproduct_list").innerHTML=cartlist;
 
 
 }
