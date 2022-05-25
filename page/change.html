@@ -94,6 +94,44 @@
                 
                 <h2 class="text-center TCword"><br>二手商品交換</h2>
 
+
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#insert">我要上架</button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="insert" tabindex="-1" aria-labelledby="title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="title"></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <p>上架二手商品</p>
+                                <div class="mb-3">
+                                    <input class="text_input form-control" placeholder="Product Nmae" type="text"required autocomplete="off" id="changeproduct_name"/>
+                                </div>
+                                <div class="mb-3">
+                                    <input class="text_input form-control" placeholder="Price" type="text"required autocomplete="off" id="changeproduct_img"/>
+                                </div>
+                            </div>
+                            <div class="w-100 row mx-auto py-5">
+                                <span style="width: 5%;"></span>
+                                <button type="button" class="btn btn-secondary col-6" style="width: 40%;" data-bs-dismiss="modal">Close</button>
+                                <span style="width: 10%;"></span>
+                                <button type="button" class="btn btn-primary col-6" style="width: 40%;" onclick="insert_change()">我要上架</button>
+                                <span style="width: 5%;"></span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+
+
                 <div class="row" id="changeproduct_list" style="margin-left: 5vw; margin-right: 5vw; "><!-- margin-top分隔 --></div>
 
             </div>
