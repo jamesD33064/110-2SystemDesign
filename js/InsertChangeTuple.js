@@ -2,19 +2,19 @@ username="";
 email="";
 
 function insert_change(){
-    
-        url='../db/InsertChangeTuple.php';
-        $.post(url,{
-    
-            'CustomerName' : username,
-            'Email' : email,
-            'Img' : document.getElementById("changeproduct_img").value,
-            'ProductName' : document.getElementById("changeproduct_name").value
-    
-        },function(data){
-            alert(price + "出價成功");
-            location.reload();
-        });
+    ProductName = document.getElementById("changeproduct_name").value
+    url='../db/InsertChangeTuple.php';
+    $.post(url,{
+        
+        'CustomerName' : username,
+        'Email' : email,
+        'Img' : document.getElementById("changeproduct_img").value,
+        'ProductName' : ProductName
+
+    },function(data){
+        alert(ProductName + "上架成功");
+        location.reload();
+    });
 }
 
 

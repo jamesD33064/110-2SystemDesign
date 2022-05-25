@@ -5,24 +5,38 @@
 
         $CustomerName = $_POST["CustomerName"];
         $Email = $_POST["Email"];
-        $ProductID = $_POST["ProductID"];
-        $Price = $_POST["Price"];
-        
+        $Img = $_POST["Img"];
+        $ProductName = $_POST["ProductName"];
+        $Price = 0;
+
+
         date_default_timezone_set('Asia/Taipei');//設定時區
         $sell_date = date("Y-m-d H:i:s");
 
-        echo $CustomerName.$Price.$Email;
+
+        echo $CustomerName.$Email.$Img.$ProductName;
 
         // $sql="SELECT * FROM `test` where "
-        $id = date("Ymd");//還沒寫規則
+        $sql = "SELECT `id` FROM `changeBOOKorCD` ORDER BY `changeBOOKorCD`.`id` DESC LIMIT 1;";
+
+        $id = mysqli_fetch_assoc(mysqli_query($link, $sql))["id"];
 
 
-        $sql = "UPDATE `Bidding_product` SET `from_customer_name` = '".$CustomerName."', `product_price` = '".$Price."' WHERE `Bidding_product`.`id` = '".$ProductID."';";
+        $id = 1+(int)substr($id, 2);
 
+        if($id < 10){
+            $id = "cp0".strval($id);
+        }
+        else{
+            $id = "cp".strval($id);
+        }
+
+
+        $sql = "INSERT INTO `changeBOOKorCD` (`id`, `from_customer_name`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`) VALUES ('".$id."' , '".$CustomerName."', '".$ProductName."', '".$Price."' , '".$Img."', '".$Img."' , '".$Img."')";
         echo $sql;
 
         if(mysqli_query($link, $sql)){
-                echo "出價成功!";
+                echo "上架成功!";
                 // header("refresh:32;url=../index.html");
                 // smtp($email , $IGname , "訂單詳情" , make_mail($ordername , $product_num_json , $sendway , $address , $sell_date));
                 exit;
