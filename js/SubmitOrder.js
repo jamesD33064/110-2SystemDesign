@@ -33,8 +33,48 @@ function post_productlist(){
 
 }
 
+function get(url) {
+
+    return new Promise((resolve, reject)=> {
+        var req = new XMLHttpRequest();
+        req.open('GET', url);
+        req.onload = function() {
+            if (req.status == 200 && req.readyState==4) {
+                resolve(req.response);
+            }
+        };
+        req.send();
+    });
+}
+total_price=0;
+function post_coupon(){
+
+    get("../db/userdata.php")
+    .then((res) => {
+        data = JSON.parse(res);
+        if(data[0]){
+
+            url='../db/compare_coupon.php';
+            $.post(url,{
+                'coupon' : document.getElementById("coupon").value,
+                'email' : data[0],
+                'total' : product_totalprice()
+            },function(data){
+                // $(".result").html(data);
+            });
+        
+        }
+    })
+
+}
+
+
+
 function load(){
     CustomerData = JSON.parse(localStorage.getItem('CD'));
     document.getElementById('freight').innerText = localStorage.getItem('freight');
     document.getElementById('total_price').innerText = product_totalprice() + Number(localStorage.getItem('freight'));
 }
+
+
+
