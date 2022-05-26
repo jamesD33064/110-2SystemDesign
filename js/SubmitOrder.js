@@ -9,7 +9,6 @@ function post_productlist(){
         CustomerData = JSON.parse(localStorage.getItem('CD'));
 
         product_num_json_data = localStorage.getItem("num_list");
-        
         $.post(url,{
     
             'IGname' : CustomerData[0].data,
@@ -20,8 +19,9 @@ function post_productlist(){
 
             'product_num_json' : product_num_json_data,
 
-            'sendway' : CustomerData[5].data,
-            'address' : CustomerData[6].data
+            'payway' : CustomerData[5].data,
+            'sendway' : CustomerData[6].data,
+            'address' : CustomerData[7].data
     
         },function(data){
             // alert("下單成功，聯絡客服確認訂單");

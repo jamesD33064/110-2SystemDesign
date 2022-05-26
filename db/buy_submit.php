@@ -9,6 +9,7 @@
         $orderphone = $_POST["orderphone"];
         $receverphone = $_POST["receverphone"];
         $product_num_json = $_POST["product_num_json"];
+        $payway = $_POST["payway"];
         $sendway = $_POST["sendway"];
         $address = $_POST["address"];
         
@@ -19,8 +20,8 @@
         $id = date("Ymd");//還沒寫規則
 
 
-        $sql = "INSERT INTO `test`(`id`, `IGname`, `email`, `ordername`, `orderphone`, `receverphone`, `product_num_json`, `sendway`, `address`, `sell_date`) 
-                VALUES ('".$id."','".$IGname."','".$email."','".$ordername."','".$orderphone."','".$receverphone."','".$product_num_json."','".$sendway."','".$address."','".$sell_date."')";
+        $sql = "INSERT INTO `test`(`id`, `IGname`, `email`, `ordername`, `orderphone`, `receverphone`, `product_num_json`, `payway` , `sendway`, `address`, `sell_date`) 
+                VALUES ('".$id."','".$IGname."','".$email."','".$ordername."','".$orderphone."','".$receverphone."','".$product_num_json."','".$payway."','".$sendway."','".$address."','".$sell_date."')";
 
         echo $sql;
 
@@ -28,8 +29,8 @@
                 echo "下單成功!";
                 // header("refresh:32;url=../index.html");
 
-                smtp($email , $IGname , "訂單詳情" , make_mail($ordername , $product_num_json , $sendway , $address , $sell_date));
-                smtp("SecondRoom@mspredator.com" , $ordername , "訂單詳情" , make_mail($ordername , $product_num_json , $sendway , $address , $sell_date));
+                smtp($email , $IGname , "訂單詳情" , make_mail($ordername , $product_num_json , $payway, $sendway , $address , $sell_date));
+                smtp("SecondRoom@mspredator.com" , $ordername , "訂單詳情" , make_mail($ordername , $product_num_json , $payway, $sendway , $address , $sell_date));
                 exit;
 
         }
@@ -39,7 +40,7 @@
 
 
 
-        function make_mail($ordername , $product_num_json , $sendway , $address , $sell_date){
+        function make_mail($ordername , $product_num_json , $payway , $sendway , $address , $sell_date){
 
                 include ("coon.php");
                 
@@ -88,6 +89,14 @@
                                 break;
                         
 
+                }
+                switch($payway){
+                        case "pay_1":
+                                $mail_body = str_replace("payway","匯款" , $mail_body);
+                                break;
+                        case "pay_2":
+                                $mail_body = str_replace("payway","虛擬貨幣支付", $mail_body);
+                                break;
                 }
 
                 mysqli_close($link);

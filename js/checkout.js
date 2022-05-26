@@ -65,6 +65,7 @@ function nextPage(){
     ordername_data = document.getElementById("ordername").value;
     orderphone_data = document.getElementById("orderphone").value;
     receverphone_data = document.getElementById("receverphone").value;
+    payway_data = document.querySelector('input[name="payway"]:checked').value;
     sendway_data = document.querySelector('input[name="sendway"]:checked').value;
 
     if(document.getElementById("address").value==''){
@@ -84,6 +85,7 @@ function nextPage(){
             {datatype : 'ordername',data : ordername_data},
             {datatype : 'orderphone',data : orderphone_data},
             {datatype : 'receverphone',data : receverphone_data},
+            {datatype : 'payway',data : payway_data},
             {datatype : 'sendway',data : sendway_data},
             {datatype : 'address',data : address_data}
         ];
