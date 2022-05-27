@@ -52,16 +52,21 @@ function post_coupon(){
     get("../db/userdata.php")
     .then((res) => {
         data = JSON.parse(res);
-        if(data[0]){
 
-            url='../db/compare_coupon.php';
-            $.post(url,{
-                'coupon' : document.getElementById("coupon").value,
-                'email' : data[0],
-                'total' : product_totalprice()
-            },function(data){
-                // $(".result").html(data);
-            });
+        if(data[0]){
+            coupon_name = document.getElementById("coupon").value;
+            url='../db/compare_coupon.php?coupon=' + document.getElementById("coupon").value + '&email=' + data[2] + '&total=' + product_totalprice()
+
+            get(url)
+            .then((res) => {
+                document.getElementById("input_coupon").style.display = "none";
+                document.getElementById("show_use_coupon").style.display = "block";
+                document.getElementById("show_use_coupon_name").innerText = coupon_name;
+                document.getElementById("first_total").innerText = Number(res);
+                document.getElementById("total_price").innerText = Number(res)+ Number(localStorage.getItem('freight'));
+            })
+
+
         
         }
     })

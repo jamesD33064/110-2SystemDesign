@@ -103,12 +103,17 @@
 
                                 <div class='line'></div>
 
-                                <p class="ENGword">小記：NT$ <script>document.write(product_totalprice())</script></p>
+                                <p class="ENGword">小記：NT$ <span id="first_total"><script>document.write(product_totalprice())</script></span></p>
                                 <p class="ENGword">運費：NT$ <span id="freight">0</span></p>
 
                                 <div class='line'></div>
-                                <input class="input" placeholder="輸入折扣碼" type="text" id="coupon"/>
-                                <input class="input" type="submit" onclick="post_coupon" value="確認">
+                                
+                                <div id="input_coupon">
+                                    <input class="input" placeholder="輸入折扣碼" type="text" id="coupon"/>
+                                    <input class="input" type="submit" onclick="post_coupon()" value="確認"/>
+                                </div>
+                                <p id="show_use_coupon" style="display: none;">已使用折扣碼:<span id="show_use_coupon_name"></span></p>
+                                
                                 <div class='line'></div>
                 
                                 <p class="ENGword">合計：NT$<span id="total_price">0</span></p>
@@ -130,10 +135,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <footer class="text-center" style="background-color: #ffffff;">
+                <div class="line"></div>
+
+        <footer class="text-center">
             <!-- Grid container -->
             <div class="container">
               <!-- Section: Social media -->
@@ -165,12 +170,15 @@
             <!-- Grid container -->
           
             <!-- Copyright -->
-            <div class="text-center text-dark p-3 ENGword" style="background-color: #ffffff;">
+            <div class="text-center text-dark p-3 ENGword">
                 copyright © 2022 : ASH
             </div>
             <!-- Copyright -->
         </footer>
 
+
+    </div>
+</div>
 
     </body>
 
