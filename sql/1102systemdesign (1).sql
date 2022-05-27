@@ -68,9 +68,9 @@ CREATE TABLE `changeBOOKorCD` (
 
 INSERT INTO `changeBOOKorCD` (`id`, `from_customer_name`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`) VALUES
 ('cp04', 'aaa', 'test', 0, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p01', '你好', '你好這裡是記憶花店', 1099, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p02', '花店', '日本色ttt', 8000, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p03', '333花店', '日b4b4b4b4', 8000, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG');
+('cp01', '你好', '你好這裡是記憶花店', 0, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
+('cp02', '花店', '日本色ttt', 0, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
+('cp03', '333花店', '日b4b4b4b4', 0, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG');
 
 -- --------------------------------------------------------
 
