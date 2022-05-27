@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `bidding_product`
+-- 資料表結構 `Bidding_product`
 --
 
-CREATE TABLE `bidding_product` (
+CREATE TABLE `Bidding_product` (
   `id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `from_customer_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -39,20 +39,20 @@ CREATE TABLE `bidding_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `bidding_product`
+-- 傾印資料表的資料 `Bidding_product`
 --
 
-INSERT INTO `bidding_product` (`id`, `from_customer_name`, `product_name`, `product_price`, `end_time`, `img_1`, `img_2`, `img_3`) VALUES
+INSERT INTO `Bidding_product` (`id`, `from_customer_name`, `product_name`, `product_price`, `end_time`, `img_1`, `img_2`, `img_3`) VALUES
 ('bi01', 'aaa', '裡是憶花店', 1, '0000-00-00 00:00:00', '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
 ('bi02', 'aaa', '日本uuu', 1, '0000-00-00 00:00:00', '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `changebookorcd`
+-- 資料表結構 `changeBOOKorCD`
 --
 
-CREATE TABLE `changebookorcd` (
+CREATE TABLE `changeBOOKorCD` (
   `id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `from_customer_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -63,10 +63,10 @@ CREATE TABLE `changebookorcd` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `changebookorcd`
+-- 傾印資料表的資料 `changeBOOKorCD`
 --
 
-INSERT INTO `changebookorcd` (`id`, `from_customer_name`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`) VALUES
+INSERT INTO `changeBOOKorCD` (`id`, `from_customer_name`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`) VALUES
 ('cp04', 'aaa', 'test', 0, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
 ('p01', '你好', '你好這裡是記憶花店', 1099, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
 ('p02', '花店', '日本色ttt', 8000, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
@@ -199,9 +199,9 @@ INSERT INTO `test` (`id`, `IGname`, `email`, `ordername`, `orderphone`, `recever
 --
 
 --
--- 資料表索引 `changebookorcd`
+-- 資料表索引 `changeBOOKorCD`
 --
-ALTER TABLE `changebookorcd`
+ALTER TABLE `changeBOOKorCD`
   ADD PRIMARY KEY (`id`);
 
 --
