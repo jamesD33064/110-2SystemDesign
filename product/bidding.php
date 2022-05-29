@@ -1,3 +1,7 @@
+<?php
+$product_id = $_REQUEST["id"];
+?>
+
 <!doctype html>
     <head>
 
@@ -19,17 +23,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
         <!-- 字型 中文 -->
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
-        
+ 
         <!-- Bootstrap CSS -->
         <script src="../js/getDBdata.js"></script>
         <link href="../css/style.css" rel="stylesheet">
         <script src="../js/product.js"></script>
         <script src="../js/cart.js"></script>
+        <script src="../js/BiddingPriceSubmit.js"></script>
         <script src="../js/confirm_login.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
-
+ 
     </head>
     
     <body>
@@ -98,15 +103,23 @@
                         <div id="slide_image" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <script>document.write('<img src="../image/'+product_img_1()+'" class="d-block mx-auto" style="height:40vw;">');</script>
+                                    <img id="img_1" class="d-block mx-auto" style="height:40vw;">
                                 </div>
                                 <div class="carousel-item">
-                                    <script>document.write('<img src="../image/'+product_img_2()+'" class="d-block mx-auto" style="height:40vw;">');</script>
+                                    <img id="img_2" class="d-block mx-auto" style="height:40vw;">
                                 </div>
                                 <div class="carousel-item">
-                                    <script>document.write('<img src="../image/'+product_img_3()+'" class="d-block mx-auto" style="height:40vw;">');</script>
+                                    <img id="img_3" class="d-block mx-auto" style="height:40vw;">
                                 </div>
                             </div>
+                            
+                            <script>
+                                var id = "<?php echo $product_id ?>";
+                                document.getElementById("img_1").src = "../image/"+product_img_1(id);
+                                document.getElementById("img_2").src = "../image/"+product_img_2(id);
+                                document.getElementById("img_3").src = "../image/"+product_img_3(id);
+                            </script>
+
                             <button class="carousel-control-prev" type="button" data-bs-target="#slide_image" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
@@ -117,24 +130,70 @@
                               </button>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6">
-                        <div class="">
 
-                            <h3 class="text-center TCword" style="color: black;"> <script>document.write(get_sessionstorage_productname());</script> </h3>
-
-                            <p class="text-center lh-1 fs-6 TCword" style="color: black;">NT <script>document.write(get_sessionstorage_productprice());</script>$</p>
-
-                            <div class="text-center">
-                                <button onclick="productpage_sub()">-</button>
-                                <p style="display: inline-block; color:black" id="product_num">1</p>
-                                <button onclick="productpage_add()">+</button>
-                                <button onclick="productpage_sure()">Sure</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
+                <script>
+                    function customer_name(id){
+                        product_data=JSON.parse(localStorage.getItem("biddinglist_from_db"));
+                        for(var i=0 ; i<product_data.length ; i++){
+                            if(product_data[i].id == id){
+                                return product_data[i].from_customer_name;
+                            }
+                        };
+                    }
+                </script>
+                
+                                    <div class="col-12 col-sm-6">
+                
+                                        <div>
+                                            <h3 class="text-center TCword" style="color: black;"> <script>document.write(product_name(id));</script> </h3>
+                                        </div>
+                
+                                        <div style="height: 50%;">
+                
+                                            <p class="text-center lh-1 fs-6 TCword" style="color: black;">目前最高出價者：<script>document.write(customer_name(id));</script></p>
+                                            <p class="text-center lh-1 fs-6 TCword" style="color: black;">目前出價：NT <script>document.write(product_price(id));</script>$</p>
+                
+                                            <div class="text-center">
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#price">我要出價</button>
+                                            </div>
+                                            
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="price" tabindex="-1" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title"> <script>document.write(product_name(id));</script></h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body d-flex align-items-center">
+                                                            <div class="text-center w-100">
+                                                                <p>輸入價格</p>
+                                                                    <div class="form-group mb-3">
+                                                                        <input class="text_input form-control" placeholder="Price" type="text"required autocomplete="off" id="biddingprice"/>
+                                                                    </div>
+                                                                    <div class="form-group mb-3">
+                                                                        <input class="text_input form-control" placeholder="Double Check Price" id="biddingprice_2"/>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                
+                                                        <div class="w-100 row mx-auto py-5">
+                                                                <span style="width: 5%;"></span>
+                                                                <button class="btn btn-secondary btn-block col-6" style="width: 40%;" data-bs-dismiss="modal">Close</button>
+                                                                <span style="width: 10%;"></span>
+                                                                <button class="btn btn-primary btn-block col-6" style="width: 40%;" onclick="post_biddingprice('<?php echo $product_id ?>')">確認出價</button>
+                                                                <span style="width: 5%;"></span>
+                                                        </div>
+                
+                
+                                                    </div>
+                                                </div>
+                                            </div>
+                
+                                        </div>
+                
+                                    </div>
 
                 <div class="line"></div>
                
@@ -184,3 +243,6 @@
     </body>
 
 </html>
+
+   
+

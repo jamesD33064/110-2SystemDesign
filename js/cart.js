@@ -16,10 +16,10 @@ function productpage_sub(){
     }
 }
 
-function productpage_sure(){//在產品頁面按下確認更新購物車數量
+function productpage_sure(id){//在產品頁面按下確認更新購物車數量
     cart_number+=productnum;
     localStorage.setItem(key, String(cart_number));
-    numlist();
+    numlist(id);
     cart_num();
     productnum=1;
     document.getElementById("product_num").innerText=productnum;
@@ -51,19 +51,19 @@ function cart_num(){//整理navbar購物車部分應顯示的數量
 
 }
 
-function numlist(){//在localstorage 建立購物車列表
+function numlist(id){//在localstorage 建立當前商品 購物車列表
     if (localStorage.getItem('num_list')!=null){
         productnum_list = JSON.parse(localStorage.getItem('num_list'));
     }
     a=0;
     productnum_list.forEach(element => {
-        if(element.name==sessionStorage.getItem('productname')){
+        if(element.name== id){
             element.count+=productnum;
             a=1;
         }
     });
     if(a==0){
-        productnum_list.push({name:sessionStorage.getItem('productname'),count:productnum});
+        productnum_list.push({name: id,count:productnum});
     }
 
     var data = JSON.stringify(productnum_list);

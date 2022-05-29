@@ -1,3 +1,7 @@
+<?php
+$product_id = $_REQUEST["id"];
+?>
+
 <!doctype html>
     <head>
 
@@ -98,15 +102,23 @@
                         <div id="slide_image" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <script>document.write('<img src="../image/'+product_img_1()+'" class="d-block mx-auto" style="height:40vw;">');</script>
+                                    <img id="img_1" class="d-block mx-auto" style="height:40vw;">
                                 </div>
                                 <div class="carousel-item">
-                                    <script>document.write('<img src="../image/'+product_img_2()+'" class="d-block mx-auto" style="height:40vw;">');</script>
+                                    <img id="img_2" class="d-block mx-auto" style="height:40vw;">
                                 </div>
                                 <div class="carousel-item">
-                                    <script>document.write('<img src="../image/'+product_img_3()+'" class="d-block mx-auto" style="height:40vw;">');</script>
+                                    <img id="img_3" class="d-block mx-auto" style="height:40vw;">
                                 </div>
                             </div>
+                            
+                            <script>
+                                var id = "<?php echo $product_id ?>";
+                                document.getElementById("img_1").src = "../image/"+product_img_1(id);
+                                document.getElementById("img_2").src = "../image/"+product_img_2(id);
+                                document.getElementById("img_3").src = "../image/"+product_img_3(id);
+                            </script>
+
                             <button class="carousel-control-prev" type="button" data-bs-target="#slide_image" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
@@ -120,9 +132,9 @@
                     <div class="col-12 col-sm-6">
                         <div class="">
 
-                            <h3 class="text-center TCword" style="color: black;"> <script>document.write(get_sessionstorage_productname());</script> </h3>
+                            <h3 class="text-center TCword" style="color: black;"> <script>document.write(product_name(id));</script> </h3>
 
-                            <p class="text-center lh-1 fs-6 TCword" style="color: black;">直購：NT <script>document.write(get_sessionstorage_productprice());</script>$</p>
+                            <p class="text-center lh-1 fs-6 TCword" style="color: black;">直購：NT <script>document.write(product_price(id));</script>$</p>
 
                             <div class="text-center">
                                 這裡應該要是私訊欄位

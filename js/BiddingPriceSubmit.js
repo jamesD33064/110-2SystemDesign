@@ -1,15 +1,15 @@
 username="";
 email="";
 
-function post_biddingprice(){
-    productname=sessionStorage.getItem("productname");
+function post_biddingprice(id){
+    productname=id;
     if (productname.substring(0,2)=="bi"){
 
         price = document.getElementById("biddingprice").value;
         price_2 = document.getElementById("biddingprice_2").value;
         
         if(Number(price)==Number(price_2)){
-            if(Number(price)>Number(get_sessionstorage_productprice())){
+            if(Number(price)>Number(product_price(id))){
                     
                 url='../db/BiddingPriceSubmit.php';
                 $.post(url,{
