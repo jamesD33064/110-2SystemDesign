@@ -11,6 +11,7 @@
     require './PHPMailer-6.6.0/src/PHPMailer.php';
 
     require './PHPMailer-6.6.0/src/SMTP.php';
+
     
     function smtp($recever_address,$recever_name,$mail_title,$mail_mody){
 
@@ -23,11 +24,24 @@
         $mail->Port = 465;  //SMTP主機的SMTP埠位為465埠
         $mail->CharSet = "utf8"; //設定郵件編碼
         
-        $mail->Username = "SecondRoom@mspredator.com"; //帳號
-        $mail->Password = "Ash20220411"; //密碼
+        // $mail->Username = "SecondRoom@mspredator.com"; //帳號
+        // $mail->Password = "Ash20220411"; //密碼
         
-        $mail->From = "SecondRoom@mspredator.com"; //設定寄件者信箱
+        // $mail->From = "SecondRoom@mspredator.com"; //設定寄件者信箱
         $mail->FromName = "SecondRoom"; //設定寄件者姓名
+
+
+
+
+////////////////////////////////////////////////////////////////////////////
+        $mail->Username = "testing@mspredator.com"; //帳號
+        $mail->Password = "Waxdqzces123"; //密碼
+        
+        $mail->From = "testing@mspredator.com"; //設定寄件者信箱
+////////////////////////////////////////////////////////////////////////////
+
+
+
         
         $mail->Subject = $mail_title; //設定郵件標題
         $mail->Body = $mail_mody; //設定郵件內容

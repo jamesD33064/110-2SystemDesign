@@ -1,6 +1,6 @@
 <?php
-        include ("coon.php");
-        include "./SendMail/SMTP.php";
+        include ("./coon.php");
+        include ("./SendMail/SMTP.php");
 
 
         $IGname = $_POST["IGname"];
@@ -30,7 +30,7 @@
                 // header("refresh:32;url=../index.html");
 
                 smtp($email , $IGname , "訂單詳情" , make_mail($ordername , $product_num_json , $payway, $sendway , $address , $sell_date));
-                smtp("SecondRoom@mspredator.com" , $ordername , "訂單詳情" , make_mail($ordername , $product_num_json , $payway, $sendway , $address , $sell_date));
+                // smtp("SecondRoom@mspredator.com" , $ordername , "訂單詳情" , make_mail($ordername , $product_num_json , $payway, $sendway , $address , $sell_date));
                 exit;
 
         }
