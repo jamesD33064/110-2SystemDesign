@@ -21,6 +21,8 @@ get("../db/sendChangeToJS.php")
 })
 
 
+
+
 function show_changeproduct_list(list){
     var cartlist=""; 
 

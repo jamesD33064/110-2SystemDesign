@@ -112,20 +112,33 @@
                             </div>
                             <div class="modal-body text-center">
                                 <p>上架二手商品</p>
-                                <div class="mb-3">
-                                    <input class="text_input form-control" placeholder="Product Nmae" type="text"required autocomplete="off" id="changeproduct_name"/>
-                                </div>
-                                <div class="mb-3">
-                                    <input class="text_input form-control" placeholder="Price" type="text"required autocomplete="off" id="changeproduct_img"/>
-                                </div>
+                                <form method="post" action="../db/InsertChangeTuple.php" enctype="multipart/form-data">
+                                    <div class="mb-3">
+                                        <input class="text_input form-control" name="ProductName" placeholder="Product Nmae" type="text"required autocomplete="off" id="changeproduct_name"/>
+                                    </div>
+                                    <!-- <div class="mb-3">
+                                        <input class="text_input form-control" placeholder="IMG" type="text"required autocomplete="off" id="changeproduct_img"/>
+                                    </div> -->
+                                    <div class="mb-3">
+                                        <label>上傳圖片</label>
+                                        <input type="file" id="img" name="file" accept="image/*">
+                                    </div>
+                                    <input id="CustomerName_1" name="CustomerName" type="hidden" >
+                                    
+                                    <div class="w-100 row mx-auto py-5">
+                                        <span style="width: 5%;"></span>
+                                        <button type="button" class="btn btn-secondary col-6" style="width: 40%;" data-bs-dismiss="modal">Close</button>
+                                        <span style="width: 10%;"></span>
+                                        <button type="submit" class="btn btn-primary col-6" style="width: 40%;" onclick="insert_change()">我要上架</button>
+                                        <span style="width: 5%;"></span>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="w-100 row mx-auto py-5">
-                                <span style="width: 5%;"></span>
-                                <button type="button" class="btn btn-secondary col-6" style="width: 40%;" data-bs-dismiss="modal">Close</button>
-                                <span style="width: 10%;"></span>
-                                <button type="button" class="btn btn-primary col-6" style="width: 40%;" onclick="insert_change()">我要上架</button>
-                                <span style="width: 5%;"></span>
-                            </div>
+                            
+                            <script>
+                                document.getElementById("CustomerName_1").value=JSON.parse(localStorage.getItem('userdetail'))[1];
+                            </script>
+
                             
                         </div>
                     </div>

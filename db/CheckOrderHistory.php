@@ -10,8 +10,9 @@
         public $product_num_json='';
         public $payway='';
         public $address='';
+        public $sell_date='';
 
-        function set($IGname,$email,$ordername,$orderphone,$receverphone,$product_num_json,$payway,$address){
+        function set($IGname,$email,$ordername,$orderphone,$receverphone,$product_num_json,$payway,$address,$sell_date){
             $this->IGname = $IGname;
             $this->email = $email;
             $this->ordername = $ordername;
@@ -20,6 +21,7 @@
             $this->product_num_json = $product_num_json;
             $this->payway = $payway;
             $this->address = $address;
+            $this->sell_date = $sell_date;
         }
     }
 
@@ -40,7 +42,7 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 if($row["id"] == $email){
                     $entity = new Product();
-                    $entity->set($row['IGname'],$row['email'],$row['ordername'],$row['orderphone'],$row['receverphone'],$row['product_num_json'],$row['payway'],$row['address']);
+                    $entity->set($row['IGname'],$row['email'],$row['ordername'],$row['orderphone'],$row['receverphone'],$row['product_num_json'],$row['payway'],$row['address'],$row['sell_date']);
                     
                     array_push($product_list,$entity);
                 }

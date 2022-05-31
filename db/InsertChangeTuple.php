@@ -4,8 +4,6 @@
 
 
         $CustomerName = $_POST["CustomerName"];
-        $Email = $_POST["Email"];
-        $Img = $_POST["Img"];
         $ProductName = $_POST["ProductName"];
         $Price = 0;
 
@@ -13,10 +11,6 @@
         date_default_timezone_set('Asia/Taipei');//設定時區
         $sell_date = date("Y-m-d H:i:s");
 
-
-        echo $CustomerName.$Email.$Img.$ProductName;
-
-        // $sql="SELECT * FROM `test` where "
         $sql = "SELECT `id` FROM `changeBOOKorCD` ORDER BY `changeBOOKorCD`.`id` DESC LIMIT 1;";
 
         $id = mysqli_fetch_assoc(mysqli_query($link, $sql))["id"];
@@ -30,7 +24,35 @@
         else{
             $id = "cp".strval($id);
         }
+        //檔案
+        if ((($_FILES["file"]["type"] == "image/gif")
+            || ($_FILES["file"]["type"] == "image/jpeg")
+            || ($_FILES["file"]["type"] == "image/jpg"))
+            && ($_FILES["file"]["size"] < 200000)) {
+            if ($_FILES["file"]["error"] > 0) {
+                echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
+            } else {
+                echo "檔名: " . $_FILES["file"]["name"] . "<br />";
+                echo "檔案型別: " . $_FILES["file"]["type"] . "<br />";
+                echo "檔案大小: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
+                echo "快取檔案: " . $_FILES["file"]["tmp_name"] . "<br />";
 
+            //設定檔案上傳路徑，選擇指定資料夾
+
+                if (file_exists("../image/" . $_FILES["file"]["name"])) {
+                    echo $_FILES["file"]["name"] . " already exists. ";
+                } else {
+                    move_uploaded_file(
+                        $_FILES["file"]["tmp_name"],
+                        "../image/" . $_FILES["file"]["name"]
+                    );
+                    echo "儲存於: " . "../image/" . $_FILES["file"]["name"];//上傳成功後提示上傳資訊
+                }
+            }
+        } else {
+            echo "上傳失敗！";//上傳失敗後顯示錯誤資訊
+        }
+        $Img=$_FILES["file"]["name"];
 
         $sql = "INSERT INTO `changeBOOKorCD` (`id`, `from_customer_name`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`) VALUES ('".$id."' , '".$CustomerName."', '".$ProductName."', '".$Price."' , '".$Img."', '".$Img."' , '".$Img."')";
         echo $sql;
@@ -45,65 +67,3 @@
         else{
                 echo "fail";
         }
-
-
-
-//         function make_mail($ordername , $product_num_json , $sendway , $address , $sell_date){
-
-//                 include ("coon.php");
-                
-//                 ob_start();
-//                 include './SendMail/mail_template.html';
-//                 $mail_body = ob_get_clean();
-//                 $mail_body = str_replace("ordername",$ordername , $mail_body);
-//                 $mail_body = str_replace("sell_date",$sell_date , $mail_body);
-
-// //ProducLlsit json
-//                 // $product_num_json='[{"name":"p1","count":1},{"name":"p2","count":1},{"name":"p3","count":2},{"name":"p4","count":0},{"name":"p5","count":0},{"name":"p6","count":0},{"name":"p7","count":0},{"name":"p8","count":0}]';
-//                 $ProductList=json_decode($product_num_json);
-
-//                 $str='';
-
-//                 foreach($ProductList as $Product){
-//                         $sql='SELECT * FROM `product`';
-//                         if($Product->{'count'}){
-//                                 if($result = mysqli_query($link,$sql)){
-//                                         while($row = mysqli_fetch_assoc($result)){
-//                                                 if($row['id']==$Product->{'name'}){
-//                                                         $str = $str.(string)$row['product_name']." x ".(string)$Product->{'count'}."<br>";
-//                                                         break;
-//                                                 }
-//                                         }
-//                                 }
-//                                 mysqli_free_result($result);
-//                         }
-//                 }
-
-//                 $mail_body = str_replace("product_num_json",$str , $mail_body);
-
-// //sendway and address
-//                 switch($sendway){
-//                         case "sendway_1":
-//                                 $mail_body = str_replace("sendway","宅配(運費NT$160) 至 " , $mail_body);
-//                                 $mail_body = str_replace("address", $address , $mail_body);
-//                                 break;
-//                         case "sendway_2":
-//                                 $mail_body = str_replace("sendway","711冷凍交貨便(運費NT$130) 至 ", $mail_body);
-//                                 $mail_body = str_replace("address", $address , $mail_body);
-//                                 break;
-//                         case "sendway_3":
-//                                 $mail_body = str_replace("sendway","面交" , $mail_body);
-//                                 $mail_body = str_replace("address", "" , $mail_body);
-//                                 break;
-                        
-
-//                 }
-
-//                 mysqli_close($link);
-//                 return $mail_body;
-
-//         }
-
-
-
-?>

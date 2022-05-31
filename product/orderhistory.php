@@ -1,6 +1,10 @@
+<?php
+$product_id = $_REQUEST["id"];
+?>
+
 <!doctype html>
-<html lang="en">
     <head>
+
 
         <!-- 刪快取用要記得刪掉 -->
         <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
@@ -8,7 +12,6 @@
         <META HTTP-EQUIV="expires" CONTENT="0">
         <!-- ******************************************* -->
 
-        <meta charset="utf-8">
         <title>Product</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -22,13 +25,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
         
         <!-- Bootstrap CSS -->
-        <link href="../css/style.css" rel="stylesheet">
-        <link href="../css/profile.css" rel="stylesheet">
         <script src="../js/getDBdata.js"></script>
-        <script src="../js/cart.js"></script>
+        <link href="../css/style.css" rel="stylesheet">
         <script src="../js/product.js"></script>
-        <script src="../js/orderhistory.js"></script>
-        <script src="../js/profile.js"></script>
+        <script src="../js/cart.js"></script>
         <script src="../js/confirm_login.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -88,99 +88,110 @@
             </div>
         </nav>
         
+        
 
         <!-- Page Content  -->
-        <div id="content" style="background-color: #ffffff;">
+        <div id="content">
 
             <div class="container"  style="padding-top:80px;">
 
-                <h2 class="text-center TCword"><br>個人頁面</h2>
+                <h2 class="text-center TCword">  </h2>
 
-                <div class="d-flex justify-content-center" style="margin-top:70px;">
-
-                <div class="row"> 
-                    <div class="card p-3 py-4 col-sm-12 col-md-5" style="border:3px #ffffff solid; margin-bottom:50px;">
-                        <div class="text-center"> 
-                            <img src="../image/shark (1).png" width="100" class="rounded-circle">
-                            <h3 class="mt-2"><span id="username"></span></h3>
-                            <span class="mt-1 clearfix">白金會員</span>
-                            
-                            <div class="row mt-3 mb-3">
-                            
-                                <div class="col-md-4">
-                                    <h5>優惠券</h5>
-                                    <span class="num">10</span>
+                <div class="row" style="margin-top: 5vw;"><!-- margin-top分隔 -->
+                    <div class="col-12 col-sm-6">
+                        <div id="slide_image" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img id="img_1" class="d-block mx-auto" style="height:40vw;">
                                 </div>
-                                <div class="col-md-4">
-                                    <h5>我的最愛</h5>
-                                    <span class="num">10</span>
+                                <div class="carousel-item">
+                                    <img id="img_2" class="d-block mx-auto" style="height:40vw;">
                                 </div>
-                                <div class="col-md-4">
-                                    <h5>再買一次</h5>
-                                    <span class="num">10</span>
+                                <div class="carousel-item">
+                                    <img id="img_3" class="d-block mx-auto" style="height:40vw;">
                                 </div>
-                            
                             </div>
                             
-                            <hr class="line">
-                            
-                            <!-- <small class="mt-4">I am an android developer working at google Inc at california,USA</small> -->
-                                
-                                <button class="profile_button px-5" onclick="logout()">Logout</button>
-                
+                            <script>
+                                var id = "<?php echo $product_id ?>";
+                                document.getElementById("img_1").src = "../image/"+product_img_1(id);
+                                document.getElementById("img_2").src = "../image/"+product_img_2(id);
+                                document.getElementById("img_3").src = "../image/"+product_img_3(id);
+                            </script>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#slide_image" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                              </button>
+                              <button class="carousel-control-next" type="button" data-bs-target="#slide_image" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                              </button>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-1">
-                    </div>
-                    <div class="col-sm-12 col-md-6">
+                    <div class="col-12 col-sm-6">
+                        <div class="">
 
-                        <h5 class="text-center TCword">歷史訂單</h5>
-                        <p id="orderhistory" class="text-center "></p>
-                    </div>
+                            <h3 class="text-center TCword" style="color: black;"> <script>document.write(product_name(id));</script> </h3>
 
-                    <footer class="text-center col-12">
+                            <p class="text-center lh-1 fs-6 TCword" style="color: black;">NT <script>document.write(product_price(id));</script>$</p>
 
-                        <div class="line"></div>
-                        <!-- Grid container -->
-                        <div class="container">
-                        <!-- Section: Social media -->
-                        <section>
-                            
-                            <!-- <div class="line"></div> -->
-                            <p class="TCword" style="color: rgb(0, 0, 0);">聯絡我們</p>
-                            <!-- Facebook -->
-                            <a></a>
-                    
-                            <!-- Twitter -->
-                            <a></a>
-                    
-                            <!-- LINE -->
-                            <!-- <a href="http://line.naver.jp/R/msg/text/?分享給好友/">
-                                <img src="image/wide-default.png" width="90px" height="35px">
-                                <br>
-                            </a> -->
-                    
-                            <!-- Instagram -->
-                            <a href="https://instagram.com/the.second_room?utm_medium=copy_link" style="text-decoration:none; color:rgb(0, 0, 0)">Instagram：the.second_room</a><br>
-            
-                            <!-- Linkedin -->
-                            <a href="mailto:SecondRoom@mspredator.com"  style="text-decoration:none; color:rgb(0, 0, 0)">Mail：SecondRoom@mspredator.com</a>
-                
-                        </section>
-                        <!-- Section: Social media -->
+                            <div class="text-center">
+                                <button onclick="productpage_sub()">-</button>
+                                <p style="display: inline-block; color:black" id="product_num">1</p>
+                                <button onclick="productpage_add()">+</button>
+                                <button onclick="productpage_sure('<?php echo $product_id ?>')" id="sure">Sure</button>
+                            </div>
+
                         </div>
-                        <!-- Grid container -->
-                    
-                        <!-- Copyright -->
-                        <div class="text-center text-dark p-3 ENGword">
-                            copyright © 2022 : ASH
-                        </div>
-                        <!-- Copyright -->
-                    </footer>
+                    </div>
                 </div>
 
+
+                <div class="line"></div>
+               
+        <footer class="text-center">
+            <!-- Grid container -->
+            <div class="container">
+              <!-- Section: Social media -->
+              <section>
+                  
+                <!-- <div class="line"></div> -->
+                <p class="TCword" style="color: rgb(0, 0, 0);">聯絡我們</p>
+                <!-- Facebook -->
+                <a></a>
+          
+                <!-- Twitter -->
+                <a></a>
+          
+                <!-- LINE -->
+                <!-- <a href="http://line.naver.jp/R/msg/text/?分享給好友/">
+                    <img src="image/wide-default.png" width="90px" height="35px">
+                    <br>
+                </a> -->
+          
+                <!-- Instagram -->
+                <a href="https://instagram.com/the.second_room?utm_medium=copy_link" style="text-decoration:none; color:rgb(0, 0, 0)">Instagram：the.second_room</a><br>
+
+                <!-- Linkedin -->
+                <a href="mailto:SecondRoom@mspredator.com"  style="text-decoration:none; color:rgb(0, 0, 0)">Mail：SecondRoom@mspredator.com</a>
+    
+              </section>
+              <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+          
+            <!-- Copyright -->
+            <div class="text-center text-dark p-3 ENGword">
+                copyright © 2022 : ASH
+            </div>
+            <!-- Copyright -->
+        </footer>
             </div>
         </div>
+
+
+
 
     </body>
 

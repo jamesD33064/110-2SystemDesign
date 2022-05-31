@@ -53,11 +53,15 @@ url="../db/userdata.php"
 get(url)
 .then((res) => {
     
-    url="../db/CheckOrderHistory.php?email="+res[2];
+    url="../db/CheckOrderHistory.php?email="+JSON.parse(res)[2];
     get(url)
     .then((res) => {
         let jArray=JSON.parse(res);
-        document.getElementById("orderhistory").appendChild(generateTable(jArray));
+        order_data_from_db=[];
+        jArray.forEach(element => {
+            order_data_from_db.push({"購買日期":element.sell_date.split(" ")[0],"訂購人姓名":element.ordername,"查看更多":""});
+        });
+        document.getElementById("orderhistory").appendChild(generateTable(order_data_from_db));
     })
 
 })
