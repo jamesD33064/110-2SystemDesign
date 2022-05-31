@@ -8,7 +8,14 @@ function post_productlist(){
 
         CustomerData = JSON.parse(localStorage.getItem('CD'));
 
-        product_num_json_data = localStorage.getItem("num_list");
+        product_num_json_data = JSON.parse(localStorage.getItem("num_list"));
+
+        for (var i = 0; i < product_num_json_data.length; i++) {
+            if(product_num_json_data[i].count != 0){
+                product_num_json_data[i].name=product_name(product_num_json_data[i].name);
+            }
+        }
+
         $.post(url,{
     
             'IGname' : CustomerData[0].data,
@@ -17,11 +24,13 @@ function post_productlist(){
             'orderphone' : CustomerData[3].data,
             'receverphone' : CustomerData[4].data,
 
-            'product_num_json' : product_num_json_data,
+            'product_num_json' : JSON.stringify(product_num_json_data),
 
             'payway' : CustomerData[5].data,
             'sendway' : CustomerData[6].data,
-            'address' : CustomerData[7].data
+            'address' : CustomerData[7].data,
+            'id' : CustomerData[8].data
+
     
         },function(data){
             // alert("下單成功，聯絡客服確認訂單");

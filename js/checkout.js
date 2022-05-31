@@ -58,6 +58,7 @@ function Foo(){
     }
 }
 
+
 function nextPage(){
 //要新增檢查
     IGname_data = document.getElementById("IGname").value;
@@ -67,6 +68,9 @@ function nextPage(){
     receverphone_data = document.getElementById("receverphone").value;
     payway_data = document.querySelector('input[name="payway"]:checked').value;
     sendway_data = document.querySelector('input[name="sendway"]:checked').value;
+    
+    id_data = JSON.parse(localStorage.getItem("userdetail"))[2];
+    
 
     if(document.getElementById("address").value==''){
         address_data = document.getElementById("7-11").value;
@@ -87,7 +91,8 @@ function nextPage(){
             {datatype : 'receverphone',data : receverphone_data},
             {datatype : 'payway',data : payway_data},
             {datatype : 'sendway',data : sendway_data},
-            {datatype : 'address',data : address_data}
+            {datatype : 'address',data : address_data},
+            {datatype : 'id',data : id_data}
         ];
         
     

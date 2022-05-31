@@ -47,6 +47,10 @@ get("../db/sendBiddingToJS.php")
     localStorage.setItem("biddinglist_from_db",JSON.stringify(product_data_from_db));
     // window.setTimeout(( () =>  ), 5000);
 })
+get("../db/userdata.php")
+.then((res) => {
+    localStorage.setItem("userdetail",JSON.stringify(res));
+})
 
 ///////////////////////////////////////////////////
 

@@ -12,12 +12,12 @@
         $payway = $_POST["payway"];
         $sendway = $_POST["sendway"];
         $address = $_POST["address"];
+        $id = $_POST["id"];
         
         date_default_timezone_set('Asia/Taipei');//設定時區
         $sell_date = date("Y-m-d H:i:s");
 
         // $sql="SELECT * FROM `test` where "
-        $id = date("Ymd");//還沒寫規則
 
 
         $sql = "INSERT INTO `test`(`id`, `IGname`, `email`, `ordername`, `orderphone`, `receverphone`, `product_num_json`, `payway` , `sendway`, `address`, `sell_date`) 
