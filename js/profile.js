@@ -12,7 +12,6 @@ function get(url) {
     });
 }
 
-
 get("../db/userdata.php")
 .then((res) => {
     data = JSON.parse(res);

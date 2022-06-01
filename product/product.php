@@ -132,7 +132,14 @@ $product_id = $_REQUEST["id"];
                     <div class="col-12 col-sm-6">
                         <div class="">
 
-                            <h3 class="text-center TCword" style="color: black;"> <script>document.write(product_name(id));</script> </h3>
+                            <h1 class="text-center TCword" style="color: black;"> <script>document.write(product_name(id));</script> </h1>
+
+                            <div>
+                                <h4 class="text-center"><br>產品介紹</h4>
+                                <script>document.write(product_introduce(id));</script>
+                            </div>
+                                
+                            <div class="line"></div>
 
                             <p class="text-center lh-1 fs-6 TCword" style="color: black;">NT <script>document.write(product_price(id));</script>$</p>
 

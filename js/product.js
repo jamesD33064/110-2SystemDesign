@@ -125,6 +125,28 @@ function product_price(pprice){
     };
 }
 
+function product_introduce(pintroduce){
+
+    product_data=JSON.parse(localStorage.getItem("productlist_from_db"));
+    for(var i=0 ; i<product_data.length ; i++){
+        if(product_data[i].id == pintroduce){
+            return product_data[i].introduce;
+        }
+    }
+    product_data=JSON.parse(localStorage.getItem("changelist_from_db"));
+    for(var i=0 ; i<product_data.length ; i++){
+        if(product_data[i].id == pintroduce){
+            return product_data[i].introduce;
+        }
+    };
+    product_data=JSON.parse(localStorage.getItem("biddinglist_from_db"));
+    for(var i=0 ; i<product_data.length ; i++){
+        if(product_data[i].id == pintroduce){
+            return product_data[i].introduce;
+        }
+    };
+}
+
 function get_sessionstorage_productprice(){
     return product_price(sessionStorage.getItem('productname'))
 }

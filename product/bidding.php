@@ -145,57 +145,64 @@ $product_id = $_REQUEST["id"];
                                     <div class="col-12 col-sm-6">
                 
                                         <div>
-                                            <h3 class="text-center TCword" style="color: black;"> <script>document.write(product_name(id));</script> </h3>
+                                            <h1 class="text-center TCword" style="color: black;"> <script>document.write(product_name(id));</script> </h1>
                                         </div>
                 
                                         <div style="height: 50%;">
                 
-                                            <p class="text-center lh-1 fs-6 TCword" style="color: black;">目前最高出價者：<script>document.write(customer_name(id));</script></p>
-                                            <p class="text-center lh-1 fs-6 TCword" style="color: black;">目前出價：NT <script>document.write(product_price(id));</script>$</p>
-                
-                                            <div class="text-center">
-                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#price">我要出價</button>
-                                            </div>
-                                            
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="price" tabindex="-1" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered">
-                                                    <div class="modal-content">
-                
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title"> <script>document.write(product_name(id));</script></h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body d-flex align-items-center">
-                                                            <div class="text-center w-100">
-                                                                <p>輸入價格</p>
-                                                                    <div class="form-group mb-3">
-                                                                        <input class="text_input form-control" placeholder="Price" type="text"required autocomplete="off" id="biddingprice"/>
-                                                                    </div>
-                                                                    <div class="form-group mb-3">
-                                                                        <input class="text_input form-control" placeholder="Double Check Price" id="biddingprice_2"/>
-                                                                    </div>
+                                        <div>
+                                            <h4 class="text-center"><br>產品介紹</h4>
+                                            <script>document.write(product_introduce(id));</script>
+                                        </div>
+                                
+                                        <div class="line"></div>
+                                        <p class="text-center lh-1 fs-6 TCword" style="color: black;">目前最高出價者：<script>document.write(customer_name(id));</script></p>
+                                        <p class="text-center lh-1 fs-6 TCword" style="color: black;">目前出價：NT <script>document.write(product_price(id));</script>$</p>
+            
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#price">我要出價</button>
+                                        </div>
+                                        
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="price" tabindex="-1" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title"> <script>document.write(product_name(id));</script></h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body d-flex align-items-center">
+                                                        <div class="text-center w-100">
+                                                            <p>輸入價格</p>
+                                                            <div class="form-group mb-3">
+                                                                <input class="text_input form-control" placeholder="Price" type="text"required autocomplete="off" id="biddingprice"/>
+                                                            </div>
+                                                            <div class="form-group mb-3">
+                                                                <input class="text_input form-control" placeholder="Double Check Price" id="biddingprice_2"/>
                                                             </div>
                                                         </div>
-                
-                                                        <div class="w-100 row mx-auto py-5">
-                                                                <span style="width: 5%;"></span>
-                                                                <button class="btn btn-secondary btn-block col-6" style="width: 40%;" data-bs-dismiss="modal">Close</button>
-                                                                <span style="width: 10%;"></span>
-                                                                <button class="btn btn-primary btn-block col-6" style="width: 40%;" onclick="post_biddingprice('<?php echo $product_id ?>')">確認出價</button>
-                                                                <span style="width: 5%;"></span>
-                                                        </div>
-                
-                
+                                                    </div>
+            
+                                                    <div class="w-100 row mx-auto py-5">
+                                                            <span style="width: 5%;"></span>
+                                                            <button class="btn btn-secondary btn-block col-6" style="width: 40%;" data-bs-dismiss="modal">Close</button>
+                                                            <span style="width: 10%;"></span>
+                                                            <button class="btn btn-primary btn-block col-6" style="width: 40%;" onclick="post_biddingprice('<?php echo $product_id ?>')">確認出價</button>
+                                                            <span style="width: 5%;"></span>
                                                     </div>
                                                 </div>
                                             </div>
-                
                                         </div>
                 
                                     </div>
 
-                <div class="line"></div>
+
+
+            </div>
+        </div>
+
+
+        <div class="line"></div>
                
         <footer class="text-center">
             <!-- Grid container -->
@@ -234,10 +241,6 @@ $product_id = $_REQUEST["id"];
             </div>
             <!-- Copyright -->
         </footer>
-            </div>
-        </div>
-
-
 
 
     </body>
