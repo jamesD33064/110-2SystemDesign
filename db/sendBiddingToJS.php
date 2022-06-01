@@ -12,8 +12,9 @@
         public $img_3='';
         public $type='';
         public $introduce='';
+        public $end_time='';
 
-        function set($id,$from_customer_name,$product_name,$product_price,$img_1,$img_2,$img_3,$type,$introduce){
+        function set($id,$from_customer_name,$product_name,$product_price,$img_1,$img_2,$img_3,$type,$introduce,$end_time){
             $this->id = $id;
             $this->from_customer_name = $from_customer_name;
             $this->product_name = $product_name;
@@ -23,6 +24,7 @@
             $this->img_3 = $img_3;
             $this->type = $type;
             $this->introduce = $introduce;
+            $this->end_time = $end_time;
         }
     }
 
@@ -35,7 +37,7 @@
         while($row = mysqli_fetch_assoc($result)){
             // echo $row['id'].'<br>';
             $entity = new Product();
-            $entity->set($row['id'],$row['from_customer_name'],$row['product_name'],$row['product_price'],$row['img_1'],$row['img_2'],$row['img_3'],$row['type'],$row['introduce']);
+            $entity->set($row['id'],$row['from_customer_name'],$row['product_name'],$row['product_price'],$row['img_1'],$row['img_2'],$row['img_3'],$row['type'],$row['introduce'],$row['end_time']);
             
             array_push($product_list,$entity);
             

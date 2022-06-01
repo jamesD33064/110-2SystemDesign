@@ -152,9 +152,11 @@ $product_id = $_REQUEST["id"];
                 
                                         <div>
                                             <h4 class="text-center"><br>產品介紹</h4>
-                                            <script>document.write(product_introduce(id));</script>
+                                            <p><script>document.write(product_introduce(id));</script></p>
                                         </div>
                                 
+                                        <div class="line"></div>
+                                        <p class="text-center lh-1 fs-6 TCword" style="color: black;">截標時間：<script>document.write(end_time(id));</script></p>
                                         <div class="line"></div>
                                         <p class="text-center lh-1 fs-6 TCword" style="color: black;">目前最高出價者：<script>document.write(customer_name(id));</script></p>
                                         <p class="text-center lh-1 fs-6 TCword" style="color: black;">目前出價：NT <script>document.write(product_price(id));</script>$</p>

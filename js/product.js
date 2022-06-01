@@ -152,4 +152,12 @@ function get_sessionstorage_productprice(){
 }
 
 
+function end_time(id){
+    product_data=JSON.parse(localStorage.getItem("biddinglist_from_db"));
+    for(var i=0 ; i<product_data.length ; i++){
+        if(product_data[i].id == id){
+            return product_data[i].end_time;
+        }
+    };
+}
 
