@@ -19,6 +19,21 @@ get("../db/sendBiddingToJS.php")
 .then((res) => {
     show_biddingproduct_list(res);
 })
+function search(){
+    keyword = document.getElementById("search").value;
+    if(keyword==""){
+        location.reload()
+    }
+    else{
+        show_list = [];
+        JSON.parse(localStorage.getItem("biddinglist_from_db")).forEach(element => {
+            if(element.product_name.includes(keyword)){
+                show_list.push(element);
+            }
+        });
+        show_biddingproduct_list(show_list);
+    }
+}
 
 
 function show_biddingproduct_list(list){

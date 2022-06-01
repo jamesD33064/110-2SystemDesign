@@ -24,6 +24,23 @@ get("../db/sendProductToJS.php")
     show_monthproduct_list(res);
 })
 
+function search(){
+    keyword = document.getElementById("search").value;
+    if(keyword==""){
+        location.reload()
+    }
+    else{
+        show_list = [];
+        JSON.parse(localStorage.getItem("productlist_from_db")).forEach(element => {
+            if(element.product_name.includes(keyword)){
+                show_list.push(element);
+            }
+        });
+        show_monthproduct_list(show_list);
+    }
+}
+
+
 
 function show_monthproduct_list(list){
     var cartlist=""; 
