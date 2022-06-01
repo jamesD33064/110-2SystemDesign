@@ -37,6 +37,36 @@ function search(){
 }
 
 
+function classify(){
+    books = document.getElementsByName("book");
+    cds = document.getElementsByName("cd");
+    
+    list=[];
+    
+    books_checked=[];
+    cds_checked=[];
+    
+    for(var i=1 ; i<books.length ; i++){
+        if(books[i].checked){
+            books_checked.push("1_"+String(i));
+        }
+    }
+    for(var i=1 ; i<cds.length ; i++){
+        if(cds[i].checked){
+            cds_checked.push("2_"+String(i));
+        }
+    }//將點擊屬性紀錄
+
+    show_list = [];
+    JSON.parse(localStorage.getItem("changelist_from_db")).forEach(element => {
+        if(books_checked.includes(element.type) || cds_checked.includes(element.type)){
+            show_list.push(element);
+        }
+    });
+
+    show_changeproduct_list(show_list);
+}
+
 
 function show_changeproduct_list(list){
     var cartlist=""; 

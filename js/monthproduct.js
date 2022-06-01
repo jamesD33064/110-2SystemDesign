@@ -66,11 +66,8 @@ function classify(){
             show_list.push(element);
         }
     });
-    
+
     show_monthproduct_list(show_list);
-
-
-    
 }
 
 function show_monthproduct_list(list){
