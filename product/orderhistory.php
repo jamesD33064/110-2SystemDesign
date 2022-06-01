@@ -1,5 +1,5 @@
 <?php
-$product_id = $_REQUEST["id"];
+$sell_date = $_REQUEST["sell_date"];
 ?>
 
 <!doctype html>
