@@ -155,30 +155,41 @@ $product_id = $_REQUEST["id"];
                
                 <footer class="text-center">
             <!-- Grid container -->
-            <div class="container">
-              <!-- Section: Social media -->
-              <section>
-                  
-                <!-- <div class="line"></div> -->
-                <p class="TCword" style="color: rgb(0, 0, 0);">聯絡我們</p>
-                <!-- Facebook -->
-                <a></a>
-          
-                <!-- Twitter -->
-                <a></a>
-          
-                <!-- LINE -->
-                <a href="https://line.me/ti/p/~@496tzsqu"></a>
+            <footer class="text-center">
+                <!-- Grid container -->
+                <div class="container">
+                  <!-- Section: Social media -->
+                  <section>
+                      
+                    <!-- <div class="line"></div> -->
+                    <p class="TCword" style="color: rgb(0, 0, 0);">聯絡我們</p>
+                    <!-- Facebook -->
+                    <a></a>
+              
+                    <!-- Twitter -->
+                    <a></a>
+              
+                    <!-- LINE -->
+                    <a href="https://line.me/ti/p/~@496tzsqu"  style="text-decoration:none; color:rgb(0, 0, 0)">LINE：點擊加入LINE好友<br></a>
 
-                <!-- Instagram -->
-                <!-- <a href="https://instagram.com/the.second_room?utm_medium=copy_link" style="text-decoration:none; color:rgb(0, 0, 0)">Instagram：the.second_room</a><br> -->
-
-                <!-- Linkedin -->
-                <a href="mailto:SecondRoom@mspredator.com"  style="text-decoration:none; color:rgb(0, 0, 0)">Mail：testing@mspredator.com</a>
     
-              </section>
-              <!-- Section: Social media -->
-            </div>
+                    <!-- Instagram -->
+                    <!-- <a href="https://instagram.com/the.second_room?utm_medium=copy_link" style="text-decoration:none; color:rgb(0, 0, 0)">Instagram：the.second_room</a><br> -->
+    
+                    <!-- Linkedin -->
+                    <a href="mailto:SecondRoom@mspredator.com"  style="text-decoration:none; color:rgb(0, 0, 0)">Mail：testing@mspredator.com</a>
+        
+                  </section>
+                  <!-- Section: Social media -->
+                </div>
+                <!-- Grid container -->
+              
+                <!-- Copyright -->
+                <div class="text-center text-dark p-3 ENGword">
+                    copyright © 2022 : ASH
+                </div>
+                <!-- Copyright -->
+            </footer>
             <!-- Grid container -->
           
             <!-- Copyright -->
