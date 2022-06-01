@@ -158,7 +158,7 @@ $sell_date = $_REQUEST["sell_date"];
 
                 <div class="line"></div>
                
-        <footer class="text-center">
+                <footer class="text-center">
             <!-- Grid container -->
             <div class="container">
               <!-- Section: Social media -->
@@ -173,16 +173,13 @@ $sell_date = $_REQUEST["sell_date"];
                 <a></a>
           
                 <!-- LINE -->
-                <!-- <a href="http://line.naver.jp/R/msg/text/?分享給好友/">
-                    <img src="image/wide-default.png" width="90px" height="35px">
-                    <br>
-                </a> -->
-          
+                <a href="https://line.me/ti/p/~@496tzsqu"></a>
+
                 <!-- Instagram -->
-                <a href="https://instagram.com/the.second_room?utm_medium=copy_link" style="text-decoration:none; color:rgb(0, 0, 0)">Instagram：the.second_room</a><br>
+                <!-- <a href="https://instagram.com/the.second_room?utm_medium=copy_link" style="text-decoration:none; color:rgb(0, 0, 0)">Instagram：the.second_room</a><br> -->
 
                 <!-- Linkedin -->
-                <a href="mailto:SecondRoom@mspredator.com"  style="text-decoration:none; color:rgb(0, 0, 0)">Mail：SecondRoom@mspredator.com</a>
+                <a href="mailto:SecondRoom@mspredator.com"  style="text-decoration:none; color:rgb(0, 0, 0)">Mail：testing@mspredator.com</a>
     
               </section>
               <!-- Section: Social media -->

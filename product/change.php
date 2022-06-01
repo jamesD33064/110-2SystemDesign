@@ -132,13 +132,13 @@ $product_id = $_REQUEST["id"];
                     <div class="col-12 col-sm-6">
                         <div class="">
 
+                        <h1 class="text-center TCword" style="color: black;"> <script>document.write(product_name(id));</script> </h1>
                             <div>
                                 <h4 class="text-center"><br>產品介紹</h4>
                                 <script>document.write(product_introduce(id));</script>
                             </div>
                                 
                             <div class="line"></div>
-                            <h1 class="text-center TCword" style="color: black;"> <script>document.write(product_name(id));</script> </h1>
 
                             <p class="text-center lh-1 fs-6 TCword" style="color: black;">直購：NT <script>document.write(product_price(id));</script>$</p>
 
@@ -153,7 +153,7 @@ $product_id = $_REQUEST["id"];
 
                 <div class="line"></div>
                
-        <footer class="text-center">
+                <footer class="text-center">
             <!-- Grid container -->
             <div class="container">
               <!-- Section: Social media -->
@@ -168,16 +168,13 @@ $product_id = $_REQUEST["id"];
                 <a></a>
           
                 <!-- LINE -->
-                <!-- <a href="http://line.naver.jp/R/msg/text/?分享給好友/">
-                    <img src="image/wide-default.png" width="90px" height="35px">
-                    <br>
-                </a> -->
-          
+                <a href="https://line.me/ti/p/~@496tzsqu"></a>
+
                 <!-- Instagram -->
-                <a href="https://instagram.com/the.second_room?utm_medium=copy_link" style="text-decoration:none; color:rgb(0, 0, 0)">Instagram：the.second_room</a><br>
+                <!-- <a href="https://instagram.com/the.second_room?utm_medium=copy_link" style="text-decoration:none; color:rgb(0, 0, 0)">Instagram：the.second_room</a><br> -->
 
                 <!-- Linkedin -->
-                <a href="mailto:SecondRoom@mspredator.com"  style="text-decoration:none; color:rgb(0, 0, 0)">Mail：SecondRoom@mspredator.com</a>
+                <a href="mailto:SecondRoom@mspredator.com"  style="text-decoration:none; color:rgb(0, 0, 0)">Mail：testing@mspredator.com</a>
     
               </section>
               <!-- Section: Social media -->

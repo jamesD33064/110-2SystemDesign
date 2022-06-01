@@ -5,6 +5,8 @@
         $ProductName = $_POST["ProductName"];
         $ProductPrice = $_POST["ProductPrice"];
         $end_time = $_POST["end_time"];
+        $ProductIntroduce = $_POST["ProductIntroduce"];
+        $ProductType = $_POST["ProductType"];
         echo $end_time;
 
         date_default_timezone_set('Asia/Taipei');//設定時區
@@ -54,7 +56,7 @@
         }
         $Img=$_FILES["file"]["name"];
 
-        $sql = "INSERT INTO `Bidding_product` (`id`, `from_customer_name` , `product_name`, `product_price`, `end_time`, `img_1`, `img_2`, `img_3`) VALUES ('".$id."' , '' , '".$ProductName."', '".$ProductPrice."', '".$end_time."' , '".$Img."', '".$Img."' , '".$Img."')";
+        $sql = "INSERT INTO `Bidding_product` (`id`, `from_customer_name` , `product_name`, `product_price`, `end_time`, `img_1`, `img_2`, `img_3`, `type`, `introduce`) VALUES ('".$id."' , '' , '".$ProductName."', '".$ProductPrice."', '".$end_time."' , '".$Img."', '".$Img."' , '".$Img."', '".$ProductType."', '".$ProductIntroduce."')";
         echo $sql;
 
         if(mysqli_query($link, $sql)){

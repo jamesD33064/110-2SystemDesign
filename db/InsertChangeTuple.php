@@ -5,6 +5,9 @@
 
         $CustomerName = $_POST["CustomerName"];
         $ProductName = $_POST["ProductName"];
+        $ProductIntroduce = $_POST["ProductIntroduce"];
+        $ProductType = $_POST["ProductType"];
+        
         $Price = 0;
 
 
@@ -54,7 +57,7 @@
         }
         $Img=$_FILES["file"]["name"];
 
-        $sql = "INSERT INTO `changeBOOKorCD` (`id`, `from_customer_name`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`) VALUES ('".$id."' , '".$CustomerName."', '".$ProductName."', '".$Price."' , '".$Img."', '".$Img."' , '".$Img."')";
+        $sql = "INSERT INTO `changeBOOKorCD` (`id`, `from_customer_name`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`, `type`, `introduce`) VALUES ('".$id."' , '".$CustomerName."', '".$ProductName."', '".$Price."' , '".$Img."', '".$Img."' , '".$Img."', '".$ProductType."', '".$ProductIntroduce."')";
         echo $sql;
 
         if(mysqli_query($link, $sql)){
