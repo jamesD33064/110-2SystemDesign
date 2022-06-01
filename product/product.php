@@ -134,9 +134,16 @@ $product_id = $_REQUEST["id"];
 
                             <h1 class="text-center TCword" style="color: black;"> <script>document.write(product_name(id));</script> </h1>
 
-                            <div>
+
+                            <div class="w-100">
                                 <h4 class="text-center"><br>產品介紹</h4>
-                                <script>document.write(product_introduce(id));</script>
+                                <h6 class="text-end"><br>產品分類：<script>document.write(product_type(id));</script></h6>
+
+                                <div class="card w-75 mx-auto" style="background-color:transparent;">
+                                    <div class="card-body">
+                                        <p class="card-text"><script>document.write(product_introduce(id));</script></p>
+                                    </div>
+                                </div>
                             </div>
                                 
                             <div class="line"></div>

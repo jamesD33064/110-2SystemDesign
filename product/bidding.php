@@ -150,9 +150,15 @@ $product_id = $_REQUEST["id"];
                 
                                         <div style="height: 50%;">
                 
-                                        <div>
+                                        <div class="w-100">
                                             <h4 class="text-center"><br>產品介紹</h4>
-                                            <p><script>document.write(product_introduce(id));</script></p>
+                                            <h6 class="text-end"><br>產品分類：<script>document.write(product_type(id));</script></h6>
+
+                                            <div class="card w-75 mx-auto" style="background-color:transparent;">
+                                                <div class="card-body">
+                                                    <p class="card-text"><script>document.write(product_introduce(id));</script></p>
+                                                </div>
+                                            </div>
                                         </div>
                                 
                                         <div class="line"></div>

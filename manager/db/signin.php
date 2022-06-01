@@ -18,7 +18,7 @@
                     // echo "success";
 
                     session_start();
-                    $_SESSION["loggedin"] = true;
+                    $_SESSION["manager_loggedin"] = true;
                     
                     $unsign = 0;
                     header("location:../view/control.html");
@@ -29,7 +29,7 @@
 
             if($unsign){
                 session_start();
-                $_SESSION["loggedin"] = false;
+                $_SESSION["manager_loggedin"] = false;
                 // header('location:./index.html'); 
             }
 

@@ -147,6 +147,42 @@ function product_introduce(pintroduce){
     };
 }
 
+function product_type(ptype){
+
+    type="";
+    product_data=JSON.parse(localStorage.getItem("productlist_from_db"));
+    for(var i=0 ; i<product_data.length ; i++){
+        if(product_data[i].id == ptype){
+            type = product_data[i].type;
+        }
+    }
+    product_data=JSON.parse(localStorage.getItem("changelist_from_db"));
+    for(var i=0 ; i<product_data.length ; i++){
+        if(product_data[i].id == ptype){
+            type = product_data[i].type;
+        }
+    };
+    product_data=JSON.parse(localStorage.getItem("biddinglist_from_db"));
+    for(var i=0 ; i<product_data.length ; i++){
+        if(product_data[i].id == ptype){
+            type = product_data[i].type;
+        }
+    };
+
+    switch(type){
+        case "1_1":
+            return "小說";
+        case "1_2":
+            return "期刊";
+        case "2_1":
+            return "電影";
+        case "2_2":
+            return "專輯";
+    }
+
+}
+
+
 function get_sessionstorage_productprice(){
     return product_price(sessionStorage.getItem('productname'))
 }
