@@ -48,26 +48,44 @@ function classify(){
     
     books_checked=[];
     cds_checked=[];
-    
-    for(var i=1 ; i<books.length ; i++){
-        if(books[i].checked){
+    flag=0;
+    for(var i=0 ; i<books.length ; i++){
+        if(books[0].checked){
             books_checked.push("1_"+String(i));
+            flag=1;
+        }
+        else{
+            if(books[i].checked){
+                books_checked.push("1_"+String(i));
+                flag=1;
+            }
         }
     }
-    for(var i=1 ; i<cds.length ; i++){
-        if(cds[i].checked){
+    for(var i=0 ; i<cds.length ; i++){
+        if(cds[0].checked){
             cds_checked.push("2_"+String(i));
+            flag=1;
+        }
+        else{
+            if(cds[i].checked){
+                cds_checked.push("2_"+String(i));
+                flag=1;
+            }
         }
     }//將點擊屬性紀錄
 
-    show_list = [];
-    JSON.parse(localStorage.getItem("productlist_from_db")).forEach(element => {
-        if(books_checked.includes(element.type) || cds_checked.includes(element.type)){
-            show_list.push(element);
-        }
-    });
-
-    show_monthproduct_list(show_list);
+    if(flag==0){
+        location.reload();
+    }
+    else{
+        show_list = [];
+        JSON.parse(localStorage.getItem("productlist_from_db")).forEach(element => {
+            if(books_checked.includes(element.type) || cds_checked.includes(element.type)){
+                show_list.push(element);
+            }
+        });
+        show_monthproduct_list(show_list);
+    }
 }
 
 function show_monthproduct_list(list){
