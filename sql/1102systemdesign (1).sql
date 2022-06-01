@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-05-27 16:46:31
+-- 產生時間： 2022-06-01 16:43:27
 -- 伺服器版本： 10.4.22-MariaDB
 -- PHP 版本： 8.1.2
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `Bidding_product`
+-- 資料表結構 `bidding_product`
 --
 
-CREATE TABLE `Bidding_product` (
+CREATE TABLE `bidding_product` (
   `id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `from_customer_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -35,42 +35,50 @@ CREATE TABLE `Bidding_product` (
   `end_time` datetime NOT NULL,
   `img_1` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `img_2` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img_3` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL
+  `img_3` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `introduce` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `Bidding_product`
+-- 傾印資料表的資料 `bidding_product`
 --
 
-INSERT INTO `Bidding_product` (`id`, `from_customer_name`, `product_name`, `product_price`, `end_time`, `img_1`, `img_2`, `img_3`) VALUES
-('bi01', 'aaa', '裡是憶花店', 1, '0000-00-00 00:00:00', '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('bi02', 'aaa', '日本uuu', 1, '0000-00-00 00:00:00', '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG');
+INSERT INTO `bidding_product` (`id`, `from_customer_name`, `product_name`, `product_price`, `end_time`, `img_1`, `img_2`, `img_3`, `type`, `introduce`) VALUES
+('bi01', 'ccc', '裡是憶花店', 3, '0000-00-00 00:00:00', '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '2_1', 'j4wh4sjzj4wh4sjz'),
+('bi02', 'bbb', '日本uuu', 3, '0000-00-00 00:00:00', '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '1_3', 'j4wh4sjzj4wh4sjzj4wh4sjz'),
+('bi03', 'aaa', 'dddd', 44444, '2022-06-16 00:00:00', 'mnist1.jpg', 'mnist1.jpg', 'mnist1.jpg', '1_1', 'j4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjz'),
+('bi04', 'ddd', 'sssss', 123, '2022-06-22 00:00:00', 'mnist1.jpg', 'mnist1.jpg', 'mnist1.jpg', '2_2', 'j4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjz'),
+('bi05', 'aaa', 'ggggg', 22222, '2022-06-29 00:00:00', '20220428040209351705.JPG', '20220428040209351705.JPG', '20220428040209351705.JPG', '1_2', 'wegWGRWEHGW34GEGVEAGT3EAW');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `changeBOOKorCD`
+-- 資料表結構 `changebookorcd`
 --
 
-CREATE TABLE `changeBOOKorCD` (
+CREATE TABLE `changebookorcd` (
   `id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `from_customer_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_price` int(20) NOT NULL,
   `img_1` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `img_2` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img_3` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL
+  `img_3` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `introduce` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `changeBOOKorCD`
+-- 傾印資料表的資料 `changebookorcd`
 --
 
-INSERT INTO `changeBOOKorCD` (`id`, `from_customer_name`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`) VALUES
-('cp04', 'aaa', 'test', 0, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('cp01', '你好', '你好這裡是記憶花店', 0, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('cp02', '花店', '日本色ttt', 0, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('cp03', '333花店', '日b4b4b4b4', 0, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG');
+INSERT INTO `changebookorcd` (`id`, `from_customer_name`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`, `type`, `introduce`) VALUES
+('cp01', 'ddd', '你好這裡是記憶花店', 1099, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '1_1', ''),
+('cp02', 'bbb', '日本色ttt', 8000, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '1_2', ''),
+('cp03', 'ccc', '日b4b4b4b4', 8000, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '1_3', ''),
+('cp05', 'aaa', 'rrrrr', 0, 'mnist1.jpg', 'mnist1.jpg', 'mnist1.jpg', '2_1', 'ewrhg3hgv'),
+('cp06', 'aaa', 'qGEEWG', 0, '20220428040209351705.JPG', '20220428040209351705.JPG', '20220428040209351705.JPG', '2_2', 'NJUENJEFJEWNFJWENFJWENFJNFJ');
 
 -- --------------------------------------------------------
 
@@ -110,7 +118,9 @@ CREATE TABLE `coupon_customeruse` (
 --
 
 INSERT INTO `coupon_customeruse` (`id`, `customer_id`, `coupon_name`, `coupon_use`) VALUES
-('2022-05-27 22:41:58', 'bbb@bbb.com', 'aaa', '1');
+('2022-05-27 22:41:58', 'bbb@bbb.com', 'aaa', '1'),
+('2022-05-31 16:59:12', 'aaa@aaa.com', 'aaa', '2'),
+('2022-05-31 17:21:13', 'aaa@aaa.com', 'bbb', '2');
 
 -- --------------------------------------------------------
 
@@ -121,19 +131,62 @@ INSERT INTO `coupon_customeruse` (`id`, `customer_id`, `coupon_name`, `coupon_us
 CREATE TABLE `customer` (
   `username` varchar(10) NOT NULL,
   `email` varchar(128) NOT NULL,
-  `user_password` varchar(20) NOT NULL
+  `user_password` varchar(20) NOT NULL,
+  `phone` varchar(10) NOT NULL,
+  `address` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `customer`
 --
 
-INSERT INTO `customer` (`username`, `email`, `user_password`) VALUES
-('aaa', 'aaa@aaa.com', 'aaa'),
-('bbb', 'bbb@bbb.com', 'bbb'),
-('ccc', 'ccc@ccc.com', 'ccc'),
-('ddd', 'ddd@ddd.com', 'ddd'),
-('eee', 'eee@eee.com', 'eee');
+INSERT INTO `customer` (`username`, `email`, `user_password`, `phone`, `address`) VALUES
+('aaa', 'aaa@aaa.com', 'aaa', '', ''),
+('bbb', 'bbb@bbb.com', 'bbb', '', ''),
+('ccc', 'ccc@ccc.com', 'ccc', '', ''),
+('ddd', 'ddd@ddd.com', 'ddd', '', ''),
+('eee', 'eee@eee.com', 'eee', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `manager_account`
+--
+
+CREATE TABLE `manager_account` (
+  `account` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `manager_account`
+--
+
+INSERT INTO `manager_account` (`account`, `password`) VALUES
+('123', '123');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `message`
+--
+
+CREATE TABLE `message` (
+  `from_id` varchar(50) NOT NULL,
+  `to_id` varchar(50) NOT NULL,
+  `message` varchar(200) NOT NULL,
+  `date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `message`
+--
+
+INSERT INTO `message` (`from_id`, `to_id`, `message`, `date`) VALUES
+('aaa@aaa.com', 'ccc@ccc.com', '123', '2022-06-01 10:45:40'),
+('ccc@ccc.com', 'aaa@aaa.com', '098765', '2022-06-01 16:59:40'),
+('aaa@aaa.com', 'bbb@bbb.com', '45678', '2022-06-01 10:47:02'),
+('bbb@bbb.com', 'aaa@aaa.com', '765433222', '2022-06-01 16:49:02');
 
 -- --------------------------------------------------------
 
@@ -147,24 +200,20 @@ CREATE TABLE `product` (
   `product_price` int(20) NOT NULL,
   `img_1` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `img_2` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img_3` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL
+  `img_3` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `introduce` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `product`
 --
 
-INSERT INTO `product` (`id`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`) VALUES
-('p01', '你好這裡是記憶花店', 1099, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p02', '你好這裡是記憶花店', 2, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p03', '你好這裡是記憶花店', 999, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p04', '你好這裡是記憶花店', 4, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p05', '日本色彩寫真物語', 5, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p06', '日本色彩寫真物語', 6, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p07', '日本色彩寫真物語', 7, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p08', '日本色彩寫真物語', 8, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p09', '日本色彩寫真物語999', 8, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG'),
-('p10', '日本色ttt', 8000, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG');
+INSERT INTO `product` (`id`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`, `type`, `introduce`) VALUES
+('p01', '你好這裡是記憶花店', 1099, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '2_1', '3wq4jhn33wq4jhn33wq4jhn33wq4jhn33wq4jhn33wq4jhn3'),
+('p02', '你好這裡是我家', 2, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '1_1', '3wq4jhn33wq4jhn33wq4jhn33wq4jhn33wq4jhn33wq4jhn3'),
+('p03', '狗狗', 99999, '20220412033205518611.JPG', '20220412033205518611.JPG', '20220412033205518611.JPG', '1_2', '3wq4jhn33wq4jhn33wq4jhn33wq4jhn33wq4jhn33wq4jhn3'),
+('p04', 'WHRHRE', 45, '20220412033205518611.JPG', '20220412033205518611.JPG', '20220412033205518611.JPG', '1_1', '325245');
 
 -- --------------------------------------------------------
 
@@ -191,17 +240,24 @@ CREATE TABLE `test` (
 --
 
 INSERT INTO `test` (`id`, `IGname`, `email`, `ordername`, `orderphone`, `receverphone`, `product_num_json`, `payway`, `sendway`, `address`, `sell_date`) VALUES
-('20220527', 'dddddddddd', 'james0120160379@gmail.com', 'dddddddddd', 'dddddddddd', 'dddddddddd', '[{\"name\":\"p01\",\"count\":1}]', 'pay_2', 'sendway_3', '', '2022-05-27 00:10:18'),
-('20220527', 'gggggggggg', 'james0120160379@gmail.com', 'gggggggggg', 'gggggggggg', 'gggggggggg', '[{\"name\":\"p02\",\"count\":1},{\"name\":\"p01\",\"count\":1}]', 'pay_2', 'sendway_1', 'jjjjjjj', '2022-05-27 22:42:12');
+('aaa@aaa.com', 's', 'james0120160379@gmail.com', 'ssssssssss', 'ssssssssss', 'ssssssssss', '[{\"name\":\"你好這裡是記憶花店\",\"count\":1},{\"name\":\"日本色ttt\",\"count\":1}]', 'pay_1', 'sendway_3', '', '2022-05-31 21:51:45'),
+('aaa@aaa.com', 'ssssssssss', 'james0120160379@gmail.com', 'ssssssssss', 'ssssssssss', 'ssssssssss', '[{\"name\":\"你好這裡是記憶花店\",\"count\":1}]', 'pay_1', 'sendway_3', '', '2022-06-01 00:02:08'),
+('aaa@aaa.com', 'RRRRRRRRRR', 'james0120160379@gmail.com', 'RRRRRRRRRR', 'RRRRRRRRRR', 'RRRRRRRRRR', '[{\"name\":\"WHRHRE\",\"count\":2}]', 'pay_2', 'sendway_3', '', '2022-06-01 18:11:10');
 
 --
 -- 已傾印資料表的索引
 --
 
 --
--- 資料表索引 `changeBOOKorCD`
+-- 資料表索引 `bidding_product`
 --
-ALTER TABLE `changeBOOKorCD`
+ALTER TABLE `bidding_product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `changebookorcd`
+--
+ALTER TABLE `changebookorcd`
   ADD PRIMARY KEY (`id`);
 
 --

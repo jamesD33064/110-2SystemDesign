@@ -40,7 +40,33 @@ function search(){
     }
 }
 
+function classify(){
+    books = document.getElementsByName("book");
+    cds = document.getElementsByName("cd");
+    
+    list=[];
+    
+    for(var i=0 ; i<books.length ; i++){
+        if(books[i].checked){
+            
+        }
+    }
 
+    if(books[1].checked && cds[0].checked){
+        show_list = [];
+        JSON.parse(localStorage.getItem("productlist_from_db")).forEach(element => {
+            show_list.push(element);
+        });
+        show_monthproduct_list(show_list);
+    }
+    else{
+        show_list = [];
+        JSON.parse(localStorage.getItem("productlist_from_db")).forEach(element => {
+                show_list.push(element);
+        });
+        show_monthproduct_list(show_list);
+    }
+}
 
 function show_monthproduct_list(list){
     var cartlist=""; 
