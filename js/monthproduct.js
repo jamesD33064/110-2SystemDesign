@@ -46,26 +46,31 @@ function classify(){
     
     list=[];
     
-    for(var i=0 ; i<books.length ; i++){
+    books_checked=[];
+    cds_checked=[];
+    
+    for(var i=1 ; i<books.length ; i++){
         if(books[i].checked){
-            
+            books_checked.push("1_"+String(i));
         }
     }
+    for(var i=1 ; i<cds.length ; i++){
+        if(cds[i].checked){
+            cds_checked.push("2_"+String(i));
+        }
+    }//將點擊屬性紀錄
 
-    if(books[1].checked && cds[0].checked){
-        show_list = [];
-        JSON.parse(localStorage.getItem("productlist_from_db")).forEach(element => {
+    show_list = [];
+    JSON.parse(localStorage.getItem("productlist_from_db")).forEach(element => {
+        if(books_checked.includes(element.type) || cds_checked.includes(element.type)){
             show_list.push(element);
-        });
-        show_monthproduct_list(show_list);
-    }
-    else{
-        show_list = [];
-        JSON.parse(localStorage.getItem("productlist_from_db")).forEach(element => {
-                show_list.push(element);
-        });
-        show_monthproduct_list(show_list);
-    }
+        }
+    });
+    
+    show_monthproduct_list(show_list);
+
+
+    
 }
 
 function show_monthproduct_list(list){
