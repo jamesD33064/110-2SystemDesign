@@ -76,8 +76,8 @@ $product_id = $_REQUEST["id"];
 
                         <hr class="hr_nav"><!-- ----------------------------------- -->
                         
-                        <li class="nav-item "><a href="https://instagram.com/the.second_room?utm_medium=copy_link" class="nav-link">Instagram</a>
-                        </li>
+                        <!-- <li class="nav-item "><a href="https://instagram.com/the.second_room?utm_medium=copy_link" class="nav-link">Instagram</a>
+                        </li> -->
                     </ul>
                 </div>
 

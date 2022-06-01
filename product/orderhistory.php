@@ -75,8 +75,8 @@ $sell_date = $_REQUEST["sell_date"];
 
                         <hr class="hr_nav"><!-- ----------------------------------- -->
                         
-                        <li class="nav-item "><a href="https://instagram.com/the.second_room?utm_medium=copy_link" class="nav-link">Instagram</a>
-                        </li>
+                        <!-- <li class="nav-item "><a href="https://instagram.com/the.second_room?utm_medium=copy_link" class="nav-link">Instagram</a>
+                        </li> -->
                     </ul>
                 </div>
 
@@ -98,52 +98,60 @@ $sell_date = $_REQUEST["sell_date"];
                 <h2 class="text-center TCword">  </h2>
 
                 <div class="row" style="margin-top: 5vw;"><!-- margin-top分隔 -->
-                    <div class="col-12 col-sm-6">
-                        <div id="slide_image" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img id="img_1" class="d-block mx-auto" style="height:40vw;">
-                                </div>
-                                <div class="carousel-item">
-                                    <img id="img_2" class="d-block mx-auto" style="height:40vw;">
-                                </div>
-                                <div class="carousel-item">
-                                    <img id="img_3" class="d-block mx-auto" style="height:40vw;">
-                                </div>
-                            </div>
-                            
-                            <script>
-                                var id = "<?php echo $product_id ?>";
-                                document.getElementById("img_1").src = "../image/"+product_img_1(id);
-                                document.getElementById("img_2").src = "../image/"+product_img_2(id);
-                                document.getElementById("img_3").src = "../image/"+product_img_3(id);
-                            </script>
-
-                            <button class="carousel-control-prev" type="button" data-bs-target="#slide_image" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                              </button>
-                              <button class="carousel-control-next" type="button" data-bs-target="#slide_image" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                              </button>
+                    
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                        <h3>購買日期</h3>
+                        <div id="sell_date">
                         </div>
+
                     </div>
-                    <div class="col-12 col-sm-6">
-                        <div class="">
-
-                            <h3 class="text-center TCword" style="color: black;"> <script>document.write(product_name(id));</script> </h3>
-
-                            <p class="text-center lh-1 fs-6 TCword" style="color: black;">NT <script>document.write(product_price(id));</script>$</p>
-
-                            <div class="text-center">
-                                <button onclick="productpage_sub()">-</button>
-                                <p style="display: inline-block; color:black" id="product_num">1</p>
-                                <button onclick="productpage_add()">+</button>
-                                <button onclick="productpage_sure('<?php echo $product_id ?>')" id="sure">Sure</button>
-                            </div>
-
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                        <h3>IG名稱</h3>
+                        <div id="IGname">
                         </div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                        <h3>EMAIL</h3>
+                        <div id="email">
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                        <h3>訂購人姓名</h3>
+                        <div id="ordername">
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                        <h3>訂購人手機</h3>
+                        <div id="orderphone">
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                        <h3>收件人電話</h3>
+                        <div id="receverphone">
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                        <h3>訂單詳情</h3>
+                        <div id="product_num_json">
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                        <h3>物流方式</h3>
+                        <div id="payway">
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                        <h3>收件地址</h3>
+                        <div id="address">
+                        </div>
+
                     </div>
                 </div>
 
@@ -196,3 +204,41 @@ $sell_date = $_REQUEST["sell_date"];
     </body>
 
 </html>
+<script>
+function get(url) {
+
+    return new Promise((resolve, reject)=> {
+        var req = new XMLHttpRequest();
+        req.open('GET', url);
+        req.onload = function() {
+            if (req.status == 200 && req.readyState==4) {
+                resolve(req.response);
+            }
+        };
+        req.send();
+    });
+}
+
+url="../db/CheckOrderHistory.php?email="+JSON.parse(localStorage.getItem("userdetail"))[2];
+get(url)
+.then((res) => {
+    let jArray=JSON.parse(res);
+    var date="<?php echo $sell_date?>";
+    jArray.forEach(element => {
+        if(element.sell_date == date.replace('_', ' ')){
+            document.getElementById("IGname").innerText = element.IGname;
+            document.getElementById("email").innerText = element.email;
+            document.getElementById("ordername").innerText = element.ordername;
+            document.getElementById("orderphone").innerText = element.orderphone;
+            document.getElementById("receverphone").innerText = element.receverphone;
+            document.getElementById("product_num_json").innerText = element.product_num_json;
+            document.getElementById("payway").innerText = element.payway;
+            document.getElementById("address").innerText = element.address;
+            document.getElementById("sell_date").innerText = element.sell_date;
+        }
+    });
+})
+
+
+
+</script>
