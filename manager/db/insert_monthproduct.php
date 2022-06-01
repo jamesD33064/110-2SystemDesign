@@ -4,7 +4,9 @@
 
         $ProductName = $_POST["ProductName"];
         $ProductPrice = $_POST["ProductPrice"];
-
+        $ProductIntroduce = $_POST["ProductIntroduce"];
+        $ProductType = $_POST["ProductType"];
+        
 
         date_default_timezone_set('Asia/Taipei');//設定時區
         $sell_date = date("Y-m-d H:i:s");
@@ -53,7 +55,7 @@
         }
         $Img=$_FILES["file"]["name"];
 
-        $sql = "INSERT INTO `product` (`id`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`) VALUES ('".$id."' , '".$ProductName."', '".$ProductPrice."' , '".$Img."', '".$Img."' , '".$Img."')";
+        $sql = "INSERT INTO `product` (`id`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`, `type`, `introduce`) VALUES ('".$id."' , '".$ProductName."', '".$ProductPrice."' , '".$Img."', '".$Img."' , '".$Img."', '".$ProductType."', '".$ProductIntroduce."')";
         echo $sql;
 
         if(mysqli_query($link, $sql)){

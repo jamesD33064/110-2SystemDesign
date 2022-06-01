@@ -30,7 +30,7 @@ function show_changeproduct_list(list){
 
         img_path = "../image/"+list[i].img_1;
 
-        cartlist+="<div class=\"col-xs-12 col-sm-6 col-lg-4 col-xl-3\" style=\"margin-top: 5vw;\">";
+        cartlist+="<div class=\"col-xs-12 col-sm-6 col-lg-4\" style=\"margin-top: 5vw;\">";
         cartlist+="<div class=\"card hoverbig\" style=\"border-color:#ffffff;\" onclick=\"changeproductname_locolstorage('"+list[i].id+"');\">";
         cartlist+="<img src=\""+img_path+"\" height=\"300vw\" class=\"mx-auto\">";
         cartlist+="<div class=\"card-body\" style=\"background-color: #ffffff;\">";
