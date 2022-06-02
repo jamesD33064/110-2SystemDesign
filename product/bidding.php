@@ -156,7 +156,7 @@ $product_id = $_REQUEST["id"];
 
                                             <div class="card w-100 mx-auto" style="background-color:transparent;">
                                                 <div class="card-body">
-                                                    <p class="card-text" style="overflow-y: scroll; height:30vw;" id="product_introduce"><script>document.write(product_introduce(id));</script></p>
+                                                    <p class="card-text" style="overflow-y: scroll; height:20vw;" id="product_introduce"><script>document.write(product_introduce(id));</script></p>
                                                 </div>
                                             </div>
                                         </div>
