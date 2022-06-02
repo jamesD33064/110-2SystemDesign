@@ -157,3 +157,12 @@ html,body{
         display:none;
     }
 }
+
+
+#product_introduce::-webkit-scrollbar {
+    width: 6px;
+    background-color: rgb(131, 131, 131);
+}
+#product_introduce::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+}

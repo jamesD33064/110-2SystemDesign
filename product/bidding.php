@@ -65,7 +65,7 @@ $product_id = $_REQUEST["id"];
                         
                         <li class="nav-item "><a href="../page/monthproduct.html" class="nav-link">本月商品</a>
                         </li>
-                        <li class="nav-item " id="change"><a href="../page/change.html" class="nav-link">二手書交換</a>
+                        <li class="nav-item " id="change"><a href="../page/change.html" class="nav-link">二手商品交換</a>
                         </li>
                         <li class="nav-item " id="bidding"><a href="../page/bidding.html" class="nav-link">商品競標</a>
                         </li>
@@ -154,9 +154,9 @@ $product_id = $_REQUEST["id"];
                                             <h4 class="text-center"><br>產品介紹</h4>
                                             <h6 class="text-end"><br>產品分類：<script>document.write(product_type(id));</script></h6>
 
-                                            <div class="card w-75 mx-auto" style="background-color:transparent;">
+                                            <div class="card w-100 mx-auto" style="background-color:transparent;">
                                                 <div class="card-body">
-                                                    <p class="card-text"><script>document.write(product_introduce(id));</script></p>
+                                                    <p class="card-text" style="overflow-y: scroll; height:30vw;" id="product_introduce"><script>document.write(product_introduce(id));</script></p>
                                                 </div>
                                             </div>
                                         </div>
