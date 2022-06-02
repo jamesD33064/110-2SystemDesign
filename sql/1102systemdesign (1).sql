@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-06-02 05:45:32
+-- 產生時間： 2022-06-02 11:00:03
 -- 伺服器版本： 10.4.22-MariaDB
 -- PHP 版本： 8.1.2
 
@@ -132,8 +132,8 @@ CREATE TABLE `customer` (
   `username` varchar(10) NOT NULL,
   `email` varchar(128) NOT NULL,
   `user_password` varchar(20) NOT NULL,
-  `phone` varchar(10) NOT NULL,
-  `address` varchar(30) NOT NULL
+  `phone` varchar(10) NOT NULL DEFAULT '未填寫',
+  `address` varchar(30) DEFAULT '未填寫'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -141,11 +141,12 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`username`, `email`, `user_password`, `phone`, `address`) VALUES
-('aaa', 'aaa@aaa.com', 'aaa', '', ''),
-('bbb', 'bbb@bbb.com', 'bbb', '', ''),
-('ccc', 'ccc@ccc.com', 'ccc', '', ''),
-('ddd', 'ddd@ddd.com', 'ddd', '', ''),
-('eee', 'eee@eee.com', 'eee', '', '');
+('aaa', 'aaa@aaa.com', 'aaa', '0900000000', '未填寫'),
+('bbb', 'bbb@bbb.com', 'bbb', '未填寫', '未填寫'),
+('ccc', 'ccc@ccc.com', 'ccc', '未填寫', '未填寫'),
+('ddd', 'ddd@ddd.com', 'ddd', '未填寫', '未填寫'),
+('eee', 'eee@eee.com', 'eee', '未填寫', '未填寫'),
+('fff', 'fff@fff.com', 'fff', '未填寫', '未填寫');
 
 -- --------------------------------------------------------
 
@@ -240,9 +241,14 @@ CREATE TABLE `test` (
 --
 
 INSERT INTO `test` (`id`, `IGname`, `email`, `ordername`, `orderphone`, `receverphone`, `product_num_json`, `payway`, `sendway`, `address`, `sell_date`) VALUES
+('aaa@aaa.com', 'swsh', 'james0120160379@gmail.com', 'ssssssssss', 'ssssssssss', 'ssssssssss', '[{\"name\":\"你好這裡是記憶花店\",\"count\":2},{\"name\":\"日本色ttt\",\"count\":1}]', 'pay_1', 'sendway_3', '', '2022-05-03 21:51:45'),
+('aaa@aaa.com', 'swsh', 'james0120160379@gmail.com', 'ssssssssss', 'ssssssssss', 'ssssssssss', '[{\"name\":\"你好這裡是記憶花店\",\"count\":2},{\"name\":\"日本色ttt\",\"count\":1}]', 'pay_1', 'sendway_3', '', '2022-05-14 21:51:45'),
+('aaa@aaa.com', 'ssssssssss', 'james0120160379@gmail.com', 'ssssssssss', 'ssssssssss', 'ssssssssss', '[{\"name\":\"你好這裡是記憶花店\",\"count\":1}]', 'pay_1', 'sendway_3', '', '2022-05-19 00:02:08'),
 ('aaa@aaa.com', 's', 'james0120160379@gmail.com', 'ssssssssss', 'ssssssssss', 'ssssssssss', '[{\"name\":\"你好這裡是記憶花店\",\"count\":1},{\"name\":\"日本色ttt\",\"count\":1}]', 'pay_1', 'sendway_3', '', '2022-05-31 21:51:45'),
 ('aaa@aaa.com', 'ssssssssss', 'james0120160379@gmail.com', 'ssssssssss', 'ssssssssss', 'ssssssssss', '[{\"name\":\"你好這裡是記憶花店\",\"count\":1}]', 'pay_1', 'sendway_3', '', '2022-06-01 00:02:08'),
-('aaa@aaa.com', 'RRRRRRRRRR', 'james0120160379@gmail.com', 'RRRRRRRRRR', 'RRRRRRRRRR', 'RRRRRRRRRR', '[{\"name\":\"WHRHRE\",\"count\":2}]', 'pay_2', 'sendway_3', '', '2022-06-01 18:11:10');
+('aaa@aaa.com', 'RRRRRRRRRR', 'james0120160379@gmail.com', 'RRRRRRRRRR', 'RRRRRRRRRR', 'RRRRRRRRRR', '[{\"name\":\"WHRHRE\",\"count\":2}]', 'pay_2', 'sendway_3', '', '2022-06-01 18:11:10'),
+('aaa@aaa.com', 'ssssssssss', 'james0120160379@gmail.com', 'ssssssssss', 'ssssssssss', 'ssssssssss', '[{\"name\":\"你好這裡是記憶花店\",\"count\":1}]', 'pay_1', 'sendway_3', '', '2022-06-18 00:02:08'),
+('aaa@aaa.com', 'ssssssssss', 'james0120160379@gmail.com', 'ssssssssss', 'ssssssssss', 'ssssssssss', '[{\"name\":\"你好這裡是記憶花店\",\"count\":1}]', 'pay_1', 'sendway_3', '', '2022-06-19 00:02:08');
 
 --
 -- 已傾印資料表的索引

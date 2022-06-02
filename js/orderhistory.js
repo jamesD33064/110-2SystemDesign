@@ -28,11 +28,13 @@ function generateTable (jArray) {
         Object.keys(row).forEach(tdName => {
             let td = document.createElement('td');
             td.textContent= row[tdName];
-            td.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-style: solid;border-width: 5;padding: 20px"
+            // td.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-style: solid;border-width: 5;padding: 20px";
+            td.style.cssText="padding: 20px";
             tr.appendChild(td);
         });
         bt =document.createElement("button");           //createElement生成button对象
         bt.innerHTML = '查看更多';
+        bt.style.cssText="margin-top: 1vw;";
         bt.setAttribute("id", i_sell_date);
         bt.onclick = function () {    
             url="../product/orderhistory.php?sell_date="+sell_date_list[this.id].replace(' ', '_');
@@ -40,27 +42,27 @@ function generateTable (jArray) {
         };
         i_sell_date++;
         
-        tr.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-width: 5;border-style: solid;";
+        // tr.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-width: 5;border-style: solid;";
         tr.appendChild(bt);
-        tbody.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-width: 5;border-style: solid;";
+        // tbody.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-width: 5;border-style: solid;";
         tbody.appendChild(tr);
     });
     table.appendChild(tbody);
     
     // 將所有資料列的欄位轉成thead
     let headerTr = document.createElement('tr')
-    headerTr.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-width: 5;border-style: solid;";
+    // headerTr.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-width: 5;border-style: solid;";
     Object.keys(jArray[0]).forEach(header => {
         let th = document.createElement('th')
         th.textContent = header
-        th.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-width: 5;border-style: solid;";
+        // th.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-width: 5;border-style: solid;";
         headerTr.appendChild(th)
     });
     
     // 新增thead到table上
-    thead.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-width: 5;border-style: solid;";
+    // thead.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-width: 5;border-style: solid;";
     thead.appendChild(headerTr);
-    table.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-width: 5;border-style: solid;";
+    // table.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-width: 5;border-style: solid;";
     table.appendChild(thead);
     
     return table;

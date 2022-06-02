@@ -79,3 +79,11 @@ box-shadow:  20px 20px 60px #3c64a0,
             -20px -20px 60px #3c64a0;
 	
 }
+
+#orderhistory::-webkit-scrollbar {
+width: 6px;
+background-color: rgb(131, 131, 131);
+}
+#orderhistory::-webkit-scrollbar-thumb {
+background-color: #ffffff;
+}

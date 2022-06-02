@@ -87,74 +87,84 @@ $sell_date = $_REQUEST["sell_date"];
                 </span>
             </div>
         </nav>
-        
-        
-
+            
         <!-- Page Content  -->
         <div id="content">
 
             <div class="container"  style="padding-top:80px;">
 
                 <h2 class="text-center TCword">  </h2>
-
-                <div class="row" style="margin-top: 5vw;"><!-- margin-top分隔 -->
+                <div class="card mx-auto" style="width: 80%;">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">訂單詳情</h3>
+                        <h6 class="card-subtitle mb-2 text-center">訂單編號:<span id="id"></span></h6>
+                        <div class="row">
                     
-                    <div class="col-xs-12 col-sm-6 col-lg-3">
-                        <h3>購買日期</h3>
-                        <div id="sell_date">
-                        </div>
+                            <div class="p-4 col-xs-12 col-sm-6 col-lg-4 text-center">
+                                <h3>購買日期</h3>
+                                <div id="sell_date">
+                                </div>
 
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-lg-3">
-                        <h3>IG名稱</h3>
-                        <div id="IGname">
-                        </div>
+                            </div>
+                            <div class="p-4 col-xs-12 col-sm-6 col-lg-4 text-center">
+                                <h3>IG名稱</h3>
+                                <div id="IGname">
+                                </div>
 
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-lg-3">
-                        <h3>EMAIL</h3>
-                        <div id="email">
-                        </div>
+                            </div>
+                            <div class="p-4 col-xs-12 col-sm-6 col-lg-4 text-center">
+                                <h3>EMAIL</h3>
+                                <div id="email">
+                                </div>
 
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-lg-3">
-                        <h3>訂購人姓名</h3>
-                        <div id="ordername">
-                        </div>
+                            </div>
+                            <div class="p-4 col-xs-12 col-sm-6 col-lg-4 text-center">
+                                <h3>訂購人姓名</h3>
+                                <div id="ordername">
+                                </div>
 
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-lg-3">
-                        <h3>訂購人手機</h3>
-                        <div id="orderphone">
-                        </div>
+                            </div>
+                            <div class="p-4 col-xs-12 col-sm-6 col-lg-4 text-center">
+                                <h3>訂購人手機</h3>
+                                <div id="orderphone">
+                                </div>
 
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-lg-3">
-                        <h3>收件人電話</h3>
-                        <div id="receverphone">
-                        </div>
+                            </div>
+                            <div class="p-4 col-xs-12 col-sm-6 col-lg-4 text-center">
+                                <h3>收件人電話</h3>
+                                <div id="receverphone">
+                                </div>
 
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-lg-3">
-                        <h3>訂單詳情</h3>
-                        <div id="product_num_json">
-                        </div>
+                            </div>
+                            <div class="p-4 col-xs-12 col-sm-6 col-lg-4 text-center">
+                                <h3>訂單詳情</h3>
+                                <div id="product_num_json">
+                                </div>
+                                <!-- overflow-y: scroll; -->
+                            </div>
+                            <div class="p-4 col-xs-12 col-sm-6 col-lg-4 text-center">
+                                <h3>付款方式</h3>
+                                <div id="payway">
+                                </div>
 
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-lg-3">
-                        <h3>物流方式</h3>
-                        <div id="payway">
-                        </div>
+                            </div>
+                            <div class="p-4 col-xs-12 col-sm-6 col-lg-4 text-center">
+                                <h3>物流方式</h3>
+                                <div id="sendway">
+                                </div>
 
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-lg-3">
-                        <h3>收件地址</h3>
-                        <div id="address">
+                            </div>
+                            <div class="p-4 col-xs-12 col-sm-6 col-lg-4 text-center">
+                                <h3>收件地址</h3>
+                                <div id="address">
+                                </div>
+
+                            </div>
                         </div>
 
                     </div>
                 </div>
-
+                
 
                 <div class="line"></div>
                
@@ -231,8 +241,10 @@ get(url)
             document.getElementById("receverphone").innerText = element.receverphone;
             document.getElementById("product_num_json").innerText = element.product_num_json;
             document.getElementById("payway").innerText = element.payway;
+            document.getElementById("sendway").innerText = element.sendway;
             document.getElementById("address").innerText = element.address;
             document.getElementById("sell_date").innerText = element.sell_date;
+            document.getElementById("id").innerText = element.id;
         }
     });
 })
