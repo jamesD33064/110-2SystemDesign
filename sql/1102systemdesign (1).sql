@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-06-01 16:43:27
+-- 產生時間： 2022-06-02 05:45:32
 -- 伺服器版本： 10.4.22-MariaDB
 -- PHP 版本： 8.1.2
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `bidding_product`
+-- 資料表結構 `Bidding_product`
 --
 
-CREATE TABLE `bidding_product` (
+CREATE TABLE `Bidding_product` (
   `id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `from_customer_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -41,12 +41,12 @@ CREATE TABLE `bidding_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `bidding_product`
+-- 傾印資料表的資料 `Bidding_product`
 --
 
-INSERT INTO `bidding_product` (`id`, `from_customer_name`, `product_name`, `product_price`, `end_time`, `img_1`, `img_2`, `img_3`, `type`, `introduce`) VALUES
+INSERT INTO `Bidding_product` (`id`, `from_customer_name`, `product_name`, `product_price`, `end_time`, `img_1`, `img_2`, `img_3`, `type`, `introduce`) VALUES
 ('bi01', 'ccc', '裡是憶花店', 3, '0000-00-00 00:00:00', '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '2_1', 'j4wh4sjzj4wh4sjz'),
-('bi02', 'bbb', '日本uuu', 3, '0000-00-00 00:00:00', '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '1_3', 'j4wh4sjzj4wh4sjzj4wh4sjz'),
+('bi02', 'bbb', '日本uuu', 3, '0000-00-00 00:00:00', '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '1_2', 'j4wh4sjzj4wh4sjzj4wh4sjz'),
 ('bi03', 'aaa', 'dddd', 44444, '2022-06-16 00:00:00', 'mnist1.jpg', 'mnist1.jpg', 'mnist1.jpg', '1_1', 'j4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjz'),
 ('bi04', 'ddd', 'sssss', 123, '2022-06-22 00:00:00', 'mnist1.jpg', 'mnist1.jpg', 'mnist1.jpg', '2_2', 'j4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjzj4wh4sjz'),
 ('bi05', 'aaa', 'ggggg', 22222, '2022-06-29 00:00:00', '20220428040209351705.JPG', '20220428040209351705.JPG', '20220428040209351705.JPG', '1_2', 'wegWGRWEHGW34GEGVEAGT3EAW');
@@ -54,10 +54,10 @@ INSERT INTO `bidding_product` (`id`, `from_customer_name`, `product_name`, `prod
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `changebookorcd`
+-- 資料表結構 `changeBOOKorCD`
 --
 
-CREATE TABLE `changebookorcd` (
+CREATE TABLE `changeBOOKorCD` (
   `id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `from_customer_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -70,13 +70,13 @@ CREATE TABLE `changebookorcd` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `changebookorcd`
+-- 傾印資料表的資料 `changeBOOKorCD`
 --
 
-INSERT INTO `changebookorcd` (`id`, `from_customer_name`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`, `type`, `introduce`) VALUES
+INSERT INTO `changeBOOKorCD` (`id`, `from_customer_name`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`, `type`, `introduce`) VALUES
 ('cp01', 'ddd', '你好這裡是記憶花店', 1099, '20220412033205518611.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '1_1', ''),
 ('cp02', 'bbb', '日本色ttt', 8000, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '1_2', ''),
-('cp03', 'ccc', '日b4b4b4b4', 8000, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '1_3', ''),
+('cp03', 'ccc', '日b4b4b4b4', 8000, 'IMG_0400.JPG', 'IMG_0400.JPG', 'IMG_0400.JPG', '1_2', ''),
 ('cp05', 'aaa', 'rrrrr', 0, 'mnist1.jpg', 'mnist1.jpg', 'mnist1.jpg', '2_1', 'ewrhg3hgv'),
 ('cp06', 'aaa', 'qGEEWG', 0, '20220428040209351705.JPG', '20220428040209351705.JPG', '20220428040209351705.JPG', '2_2', 'NJUENJEFJEWNFJWENFJWENFJNFJ');
 
@@ -249,15 +249,15 @@ INSERT INTO `test` (`id`, `IGname`, `email`, `ordername`, `orderphone`, `recever
 --
 
 --
--- 資料表索引 `bidding_product`
+-- 資料表索引 `Bidding_product`
 --
-ALTER TABLE `bidding_product`
+ALTER TABLE `Bidding_product`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `changebookorcd`
+-- 資料表索引 `changeBOOKorCD`
 --
-ALTER TABLE `changebookorcd`
+ALTER TABLE `changeBOOKorCD`
   ADD PRIMARY KEY (`id`);
 
 --

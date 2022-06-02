@@ -88,63 +88,62 @@
             <div class="container"  style="padding-top:80px;">
                 
                 <h2 class="text-center TCword"><br>商品競標</h2>
-
                 <div class="row">
-                    <div class="col-2 text-center">
-                        <h4 class="text-center TCword"><br>搜尋</h4>
-
-                        <div class="d-flex py-4">
-                            <input class="form-control me-2" type="search" placeholder="Search" name="search" id="search">
-                            <button class="btn btn-outline-success" onclick="search()">Search</button>
-                        </div>
-                        
-                        <div class="text-center py-4">
-                            <h4 class="text-center TCword">分類</h4>
-
-                            <div class="accordion accordion-flush py-4" id="accordion">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingOne">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                        書籍
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordion">
-                                        <div class="accordion-body text-start">
-                                            <input type="checkbox" id="book_1" name="book" value="book">
-                                            <label for="vehicle1"> 所有書籍</label><br>
-                                            <input type="checkbox" id="book_2" name="book" value="book">
-                                            <label for="vehicle1"> 小說</label><br>
-                                            <input type="checkbox" id="book_3" name="book" value="book">
-                                            <label for="vehicle1"> 期刊</label><br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                        光碟
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordion">
-                                        <div class="accordion-body text-start">
-                                            <input type="checkbox" id="cd_1" name="cd" value="cd">
-                                            <label for="vehicle2"> 所有光碟</label><br>
-                                            <input type="checkbox" id="cd_2" name="cd" value="cd">
-                                            <label for="vehicle2"> 電影</label><br>
-                                            <input type="checkbox" id="cd_3" name="cd" value="cd">
-                                            <label for="vehicle2"> 專輯</label><br>
-                                        </div>
-                                    </div>
+                    <div class="col-sm-12 col-lg-2">
+                        <div class="row side_panel">
+                            <div class="col-sm-7 col-lg-12">
+                                <h4 class="text-center TCword"><br>搜尋</h4>
+                                <div class="d-flex py-4">
+                                    <input class="form-control me-2" type="search" placeholder="Search" name="search" id="search">
+                                    <button class="btn btn-outline-success" onclick="search()">Search</button>
                                 </div>
                             </div>
-                            <button class="btn btn-outline-success" onclick="classify()">確認</button>
+                            <div class="text-center py-4 col-sm-4 col-lg-12">
+                                <h4 class="text-center TCword">分類</h4>
 
+                                <div class="accordion accordion-flush py-4" id="accordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingOne">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                            書籍
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordion">
+                                            <div class="accordion-body text-start">
+                                                <input type="checkbox" id="book_1" name="book" value="book">
+                                                <label for="vehicle1"> 所有書籍</label><br>
+                                                <input type="checkbox" id="book_2" name="book" value="book">
+                                                <label for="vehicle1"> 小說</label><br>
+                                                <input type="checkbox" id="book_3" name="book" value="book">
+                                                <label for="vehicle1"> 期刊</label><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingTwo">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                            光碟
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordion">
+                                            <div class="accordion-body text-start">
+                                                <input type="checkbox" id="cd_1" name="cd" value="cd">
+                                                <label for="vehicle2"> 所有光碟</label><br>
+                                                <input type="checkbox" id="cd_2" name="cd" value="cd">
+                                                <label for="vehicle2"> 電影</label><br>
+                                                <input type="checkbox" id="cd_3" name="cd" value="cd">
+                                                <label for="vehicle2"> 專輯</label><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline-success" onclick="classify()">確認</button>
+
+                            </div>
                         </div>
-            
                     </div>
-                    <div class="col-10">
+                    <div class="col-sm-12 col-lg-10">
                         <div class="row" id="biddingproduct_list" style="margin-left: 5vw; margin-right: 5vw; "><!-- margin-top分隔 --></div>
-                
                     </div>
                 </div>
 
