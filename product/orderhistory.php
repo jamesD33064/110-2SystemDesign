@@ -239,9 +239,18 @@ get(url)
             document.getElementById("ordername").innerText = element.ordername;
             document.getElementById("orderphone").innerText = element.orderphone;
             document.getElementById("receverphone").innerText = element.receverphone;
-            document.getElementById("product_num_json").innerText = element.product_num_json;
-            document.getElementById("payway").innerText = element.payway;
-            document.getElementById("sendway").innerText = element.sendway;
+            //document.getElementById("product_num_json").innerText = element.product_num_json;
+            let list = JSON.parse(element.product_num_json);
+            list.forEach(eachobj => {
+                const div = document.createElement('div');
+                div.innerHTML = eachobj.name+"x"+eachobj.count;
+                document.getElementById("product_num_json").appendChild(div);
+            });
+            if(element.payway=="pay_1")document.getElementById("payway").innerText ="匯款";
+            if(element.payway=="pay_2")document.getElementById("payway").innerText ="虛擬貨幣支付";
+            if(element.sendway=="sendway_1")document.getElementById("sendway").innerText ="宅配";
+            if(element.sendway=="sendway_2")document.getElementById("sendway").innerText ="超商";
+            if(element.sendway=="sendway_3")document.getElementById("sendway").innerText ="面交";
             document.getElementById("address").innerText = element.address;
             document.getElementById("sell_date").innerText = element.sell_date;
             document.getElementById("id").innerText = element.id;

@@ -65,6 +65,9 @@
                                                         $str = $str.(string)$row['product_name']." x ".(string)$Product->{'count'}."<br>";
                                                         break;
                                                 }
+                                                else{
+                                                        $str = (string)$Product->{'name'}." x ".(string)$Product->{'count'}."<br>";
+                                                }
                                         }
                                 }
                                 mysqli_free_result($result);
