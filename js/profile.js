@@ -31,3 +31,5 @@ function profile_username(name){
 function logout(){
     window.location="../db/logout.php";
 }
+
+
