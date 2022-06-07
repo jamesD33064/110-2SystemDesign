@@ -183,6 +183,17 @@ function product_type(ptype){
 }
 
 
+function product_lineid(ptype){
+
+    product_data=JSON.parse(localStorage.getItem("changelist_from_db"));
+    for(var i=0 ; i<product_data.length ; i++){
+        if(product_data[i].id == ptype){
+            return product_data[i].from_customer_lineid;
+        }
+    };
+
+}
+
 function get_sessionstorage_productprice(){
     return product_price(sessionStorage.getItem('productname'))
 }

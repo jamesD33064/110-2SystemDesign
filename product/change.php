@@ -136,7 +136,9 @@ $product_id = $_REQUEST["id"];
 
                         <div class="w-100">
                             <h4 class="text-center"><br>產品介紹</h4>
-                            <h6 class="text-end"><br>產品分類：<script>document.write(product_type(id));</script></h6>
+                            <h6 class="text-end">
+                                <br>產品分類：<script>document.write(product_type(id));</script><br>聯絡LINE ID：<script>document.write(product_lineid(id));</script>
+                            </h6>
 
                             <div class="card w-100 mx-auto" style="background-color:transparent;">
                                 <div class="card-body">
@@ -147,11 +149,11 @@ $product_id = $_REQUEST["id"];
                                 
                             <div class="line"></div>
 
-                            <p class="text-center lh-1 fs-6 TCword" style="color: black;">直購：NT <script>document.write(product_price(id));</script>$</p>
+                            <!-- <p class="text-center lh-1 fs-6 TCword" style="color: black;">直購：NT <script>document.write(product_price(id));</script>$</p> -->
 
-                            <div class="text-center">
+                            <!-- <div class="text-center">
                                 這裡應該要是私訊欄位
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>

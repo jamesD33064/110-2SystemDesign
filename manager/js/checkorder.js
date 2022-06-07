@@ -5,7 +5,7 @@ function get(url) {
         req.open('GET', url);
         req.onload = function() {
             if (req.status == 200 && req.readyState==4) {
-                resolve(req.response);
+                resolve(JSON.parse(req.response));
             }
         };
         req.send();
@@ -37,7 +37,7 @@ function generateTable (jArray) {
         bt.style.cssText="margin-top: 1vw;";
         bt.setAttribute("id", i_sell_date);
         bt.onclick = function () {    
-            url="../product/orderhistory.php?sell_date="+sell_date_list[this.id].replace(' ', '_');
+            url="../view/orderhistory.php?sell_date="+sell_date_list[this.id].replace(' ', '_');
             window.location=url;
         };
         i_sell_date++;
@@ -68,30 +68,14 @@ function generateTable (jArray) {
     return table;
 }
 
-url="../db/userdata.php"
+url="../db/checkorder.php";
 get(url)
 .then((res) => {
-    
-    url="../db/CheckOrderHistory.php?email="+JSON.parse(res)[2];
-    get(url)
-    .then((res) => {
-        let jArray=JSON.parse(res);
-        var flag=1;
-        order_data_from_db=[];
-        jArray.forEach(element => {
-            order_data_from_db.push({"購買日期":element.sell_date.split(" ")[0],"訂購人姓名":element.ordername," ":""});
-            sell_date_list.push(element.sell_date);
-            flag=0;
-        });
-        if(flag==0){
-            document.getElementById("orderhistory").appendChild(generateTable(order_data_from_db));
-
-        }
-        else{
-            document.getElementById("orderhistory").innerHTML = "NO HISTORY";
-
-        }
-    })
-
+    order_data_from_db=[];
+    res.forEach(element => {
+        order_data_from_db.push({"購買日期":element.sell_date,"訂購人姓名":element.ordername,"訂購狀態":element.state," ":""});
+        sell_date_list.push(element.sell_date);
+    });
+    document.getElementById("order").appendChild(generateTable(order_data_from_db));
 })
 

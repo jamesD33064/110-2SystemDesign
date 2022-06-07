@@ -166,10 +166,13 @@
                                 <p>上架二手商品</p>
                                 <form method="post" action="../db/InsertChangeTuple.php" enctype="multipart/form-data">
                                     <div class="mb-3">
-                                        <input class="text_input form-control" name="ProductName" placeholder="Product Nmae" type="text"required autocomplete="off" id="changeproduct_name"/>
+                                        <input class="text_input form-control" name="ProductName" placeholder="Product Name" type="text"required autocomplete="off" id="changeproduct_name"/>
                                     </div>
                                     <div class="mb-3">
-                                        <input class="text_input form-control" name="ProductIntroduce" placeholder="Product Introduce" type="text"required autocomplete="off" id="ProductIntroduce"/>
+                                        <textarea class="text_input form-control" name="ProductIntroduce" placeholder="Product Introduce" type="text"required autocomplete="off" id="ProductIntroduce"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input class="text_input form-control" name="lineid" placeholder="LINE ID" type="text"required autocomplete="off" id="lineid"/>
                                     </div>
                                     <div class="mb-3">
                                         <input class="text_input form-control" name="ProductType" placeholder="Product Type" type="text"required autocomplete="off" id="ProductType"/>

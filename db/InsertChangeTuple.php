@@ -7,6 +7,7 @@
         $ProductName = $_POST["ProductName"];
         $ProductIntroduce = $_POST["ProductIntroduce"];
         $ProductType = $_POST["ProductType"];
+        $lineid = $_POST["lineid"];
         
         $Price = 0;
 
@@ -30,8 +31,9 @@
         //檔案
         if ((($_FILES["file"]["type"] == "image/gif")
             || ($_FILES["file"]["type"] == "image/jpeg")
-            || ($_FILES["file"]["type"] == "image/jpg"))
-            && ($_FILES["file"]["size"] < 200000)) {
+            || ($_FILES["file"]["type"] == "image/jpg")
+            || ($_FILES["file"]["type"] == "image/png"))
+            && ($_FILES["file"]["size"] < 20000000)) {
             if ($_FILES["file"]["error"] > 0) {
                 echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
             } else {
@@ -57,7 +59,7 @@
         }
         $Img=$_FILES["file"]["name"];
 
-        $sql = "INSERT INTO `changeBOOKorCD` (`id`, `from_customer_name`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`, `type`, `introduce`) VALUES ('".$id."' , '".$CustomerName."', '".$ProductName."', '".$Price."' , '".$Img."', '".$Img."' , '".$Img."', '".$ProductType."', '".$ProductIntroduce."')";
+        $sql = "INSERT INTO `changeBOOKorCD` (`id`, `from_customer_name`, `product_name`, `product_price`, `img_1`, `img_2`, `img_3`, `type`, `introduce`,`from_customer_lineid`) VALUES ('".$id."' , '".$CustomerName."', '".$ProductName."', '".$Price."' , '".$Img."', '".$Img."' , '".$Img."', '".$ProductType."', '".$ProductIntroduce."', '".$lineid."')";
         echo $sql;
 
         if(mysqli_query($link, $sql)){
