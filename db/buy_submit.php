@@ -66,7 +66,8 @@
                                                         break;
                                                 }
                                                 else{
-                                                        $str = (string)$Product->{'name'}." x ".(string)$Product->{'count'}."<br>";
+                                                        $str = $str.(string)$Product->{'name'}." x ".(string)$Product->{'count'}."<br>";
+                                                        break;
                                                 }
                                         }
                                 }

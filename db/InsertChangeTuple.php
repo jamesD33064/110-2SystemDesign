@@ -64,6 +64,7 @@
 
         if(mysqli_query($link, $sql)){
                 echo "上架成功!";
+                header('location:../page/change.html'); 
                 // header("refresh:32;url=../index.html");
                 // smtp($email , $IGname , "訂單詳情" , make_mail($ordername , $product_num_json , $sendway , $address , $sell_date));
                 exit;

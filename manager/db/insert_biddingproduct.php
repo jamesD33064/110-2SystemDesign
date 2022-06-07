@@ -29,8 +29,9 @@
         //檔案
         if ((($_FILES["file"]["type"] == "image/gif")
             || ($_FILES["file"]["type"] == "image/jpeg")
-            || ($_FILES["file"]["type"] == "image/jpg"))
-            && ($_FILES["file"]["size"] < 200000)) {
+            || ($_FILES["file"]["type"] == "image/jpg")
+            || ($_FILES["file"]["type"] == "image/png"))
+            && ($_FILES["file"]["size"] < 20000000)) {
             if ($_FILES["file"]["error"] > 0) {
                 echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
             } else {
