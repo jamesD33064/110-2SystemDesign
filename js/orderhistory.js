@@ -29,7 +29,7 @@ function generateTable (jArray) {
             let td = document.createElement('td');
             td.textContent= row[tdName];
             // td.style.cssText="FONT-WEIGHT: 500;border-color: inherit;border-style: solid;border-width: 5;padding: 20px";
-            td.style.cssText="padding: 20px";
+            td.style.cssText="padding: 20px;";
             tr.appendChild(td);
         });
         bt =document.createElement("button");           //createElement生成button对象

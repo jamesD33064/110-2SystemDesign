@@ -99,121 +99,124 @@
                 <div class="d-flex justify-content-center" style="margin-top:70px;">
 
                 <div class="row"> 
-                    <div class="card p-3 py-4 col-sm-12 col-md-5" style="border:3px #ffffff solid; margin-bottom:50px;">
-                        <div class="text-center"> 
-                            <img src="../image/shark (1).png" width="100" class="rounded-circle">
-                            <h3 class="mt-2"><span id="username"></span></h3>
-                            <span class="mt-1 clearfix">個人資訊</span>
-                            
-                            <div class="row mt-3 mb-3">
-
-                                <div class="col-12">
-                                    <div class="row p-4">
-                                        <div class="col-md-2">
-                                            <h5>電話:</h5>
+                    
+                    <div class="col-sm-12 col-md-5">
+                        <div class="card p-3 py-4" style="border:3px #ffffff solid; margin-bottom:50px; width:100%;">
+                            <div class="text-center"> 
+                                <img src="../image/shark (1).png" width="100" class="rounded-circle">
+                                <h3 class="mt-2"><span id="username"></span></h3>
+                                <span class="mt-1 clearfix">個人資訊</span>
+                                
+                                <div class="row mt-3 mb-3">
+    
+                                    <div class="col-12">
+                                        <div class="row p-4">
+                                            <div class="col-md-2">
+                                                <h5>電話:</h5>
+                                            </div>
+                                            <div class="col-md-7 text-center">
+                                                <h5><span class="phone" id="user_phone">未填寫</span></h5>
+                                            </div>
+                                            <button type="button" class="btn btn-primary col-md-3" data-bs-toggle="modal" data-bs-target="#update_data" data-bs-whatever="電話" what_input="user_phone">修改電話</button>
                                         </div>
-                                        <div class="col-md-7 text-center">
-                                            <h5><span class="phone" id="user_phone">未填寫</span></h5>
-                                        </div>
-                                        <button type="button" class="btn btn-primary col-md-3" data-bs-toggle="modal" data-bs-target="#update_data" data-bs-whatever="電話" what_input="user_phone">修改電話</button>
                                     </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="row p-4">
-                                        <div class="col-md-2">
-                                            <h5>地址:</h5>
+    
+                                    <div class="col-12">
+                                        <div class="row p-4">
+                                            <div class="col-md-2">
+                                                <h5>地址:</h5>
+                                            </div>
+                                            <div class="col-md-7 text-center">
+                                                <h5><span class="address" id="user_address">未填寫</span></h5>
+                                            </div>
+                                            <button type="button" class="btn btn-primary col-md-3" data-bs-toggle="modal" data-bs-target="#update_data" data-bs-whatever="地址" what_input="user_address">修改地址</button>
                                         </div>
-                                        <div class="col-md-7 text-center">
-                                            <h5><span class="address" id="user_address">未填寫</span></h5>
-                                        </div>
-                                        <button type="button" class="btn btn-primary col-md-3" data-bs-toggle="modal" data-bs-target="#update_data" data-bs-whatever="地址" what_input="user_address">修改地址</button>
                                     </div>
-                                </div>
-                                    
-                                <div class="col-12">
-                                    <div class="row p-4">
-                                        <div class="col-md-2">
-                                            <h5>郵件:</h5>
-                                        </div>
-                                        <div class="col-md-7 text-center">
-                                            <h5><span class="email" id="user_email">未填寫</span></h5>
-                                        </div>
-                                        <!-- <button type="button" class="btn btn-primary col-md-3" data-bs-toggle="modal" data-bs-target="#update_data" data-bs-whatever="郵件" what_input="user_email">修改郵件</button> -->
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- model -->
-                            
-                            <div class="modal fade" id="update_data" tabindex="-1" aria-labelledby="title" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-titles" id="modal_title" style="color:#000000;"></h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form method="post" action="../db/Update_userdetail.php">
-                                                <div class="mb-3">
-                                                    <input type="text" class="form-control" id="recipient-name" name="value">
-                                                    <input type="hidden" id="input_type" name="input_type">
-                                                    <input type="hidden" id="email" name="email">
-                                                </div>
-                                                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">確認</button>
-                                            </form>
-                                        </div>
                                         
+                                    <div class="col-12">
+                                        <div class="row p-4">
+                                            <div class="col-md-2">
+                                                <h5>郵件:</h5>
+                                            </div>
+                                            <div class="col-md-7 text-center">
+                                                <h5><span class="email" id="user_email">未填寫</span></h5>
+                                            </div>
+                                            <!-- <button type="button" class="btn btn-primary col-md-3" data-bs-toggle="modal" data-bs-target="#update_data" data-bs-whatever="郵件" what_input="user_email">修改郵件</button> -->
+                                        </div>
+                                    </div>
+    
+                                </div>
+    
+                                <!-- model -->
+                                
+                                <div class="modal fade" id="update_data" tabindex="-1" aria-labelledby="title" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-titles" id="modal_title" style="color:#000000;"></h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="post" action="../db/Update_userdetail.php">
+                                                    <div class="mb-3">
+                                                        <input type="text" class="form-control" id="recipient-name" name="value">
+                                                        <input type="hidden" id="input_type" name="input_type">
+                                                        <input type="hidden" id="email" name="email">
+                                                    </div>
+                                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">確認</button>
+                                                </form>
+                                            </div>
+                                            
+                                        </div>
                                     </div>
                                 </div>
+    
+                                <script>
+                                    function get_userdetail(url) {
+                                        return new Promise((resolve, reject)=> {
+                                            var req = new XMLHttpRequest();
+                                            req.open('GET', url);
+                                            req.onload = function() {
+                                                if (req.status == 200 && req.readyState==4) {
+                                                    resolve(JSON.parse(req.response));
+                                                }
+                                            };
+                                            req.send();
+                                        });
+                                    }
+                                    url="../db/CustomerDetail.php?email="+JSON.parse(localStorage.getItem("userdetail"))[2];
+                                    get_userdetail(url)
+                                    .then((res) => {
+                                        //顯示個人訊息
+                                        document.getElementById("user_phone").innerText = res[0].phone;
+                                        document.getElementById("user_address").innerText = res[0].address;
+                                        document.getElementById("user_email").innerText = res[0].email;
+    
+                                    })
+    
+                                    //更改modal內容
+                                    var a = document.getElementById('update_data');
+                                    a.addEventListener('show.bs.modal', function (event) {
+                                        var button = event.relatedTarget;
+                                        var item = button.getAttribute('data-bs-whatever');
+                                        var type = button.getAttribute('what_input');
+                                        var email = JSON.parse(localStorage.getItem("userdetail"))[2];
+                                        var modalBodyInput = a.querySelector('.modal-body input');
+    
+                                        document.getElementById('modal_title').innerText="修改"+item;
+                                        document.getElementById('input_type').value=type;
+                                        document.getElementById('email').value=email;
+                                        modalBodyInput.value = document.getElementById(type).innerText;
+                                    })
+                                </script>
+    
+                                <!-- ----------------------------------- -->
+    
+                                
+                                <hr class="line">
+                                <button class="profile_button px-5" onclick="logout()">Logout</button>
                             </div>
-
-                            <script>
-                                function get_userdetail(url) {
-                                    return new Promise((resolve, reject)=> {
-                                        var req = new XMLHttpRequest();
-                                        req.open('GET', url);
-                                        req.onload = function() {
-                                            if (req.status == 200 && req.readyState==4) {
-                                                resolve(JSON.parse(req.response));
-                                            }
-                                        };
-                                        req.send();
-                                    });
-                                }
-                                url="../db/CustomerDetail.php?email="+JSON.parse(localStorage.getItem("userdetail"))[2];
-                                get_userdetail(url)
-                                .then((res) => {
-                                    //顯示個人訊息
-                                    document.getElementById("user_phone").innerText = res[0].phone;
-                                    document.getElementById("user_address").innerText = res[0].address;
-                                    document.getElementById("user_email").innerText = res[0].email;
-
-                                })
-
-                                //更改modal內容
-                                var a = document.getElementById('update_data');
-                                a.addEventListener('show.bs.modal', function (event) {
-                                    var button = event.relatedTarget;
-                                    var item = button.getAttribute('data-bs-whatever');
-                                    var type = button.getAttribute('what_input');
-                                    var email = JSON.parse(localStorage.getItem("userdetail"))[2];
-                                    var modalBodyInput = a.querySelector('.modal-body input');
-
-                                    document.getElementById('modal_title').innerText="修改"+item;
-                                    document.getElementById('input_type').value=type;
-                                    document.getElementById('email').value=email;
-                                    modalBodyInput.value = document.getElementById(type).innerText;
-                                })
-                            </script>
-
-                            <!-- ----------------------------------- -->
-
-                            
-                            <hr class="line">
-                            <button class="profile_button px-5" onclick="logout()">Logout</button>
                         </div>
                     </div>
 
@@ -221,10 +224,9 @@
                     </div>
 
                     <div class="col-sm-12 col-md-5">
-                        <div class="card mx-auto" style="border:3px #ffffff solid; width:100%; height:93%;">
+                        <div class="card p-3 py-4" style="border:3px #ffffff solid; margin-bottom:50px; width:100%; height:67%;">
                             <h3 class="card-title text-center TCword" style="margin: 3vw;">歷史訂單</h3>
-                            <div class="card-body mx-auto text-center" id="orderhistory" style="overflow-y: scroll;">
-                            </div>
+                            <div class="card-body mx-auto text-center" id="orderhistory" style="overflow-y: auto;"></div>
                         </div>
                     </div>
 
